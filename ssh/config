@@ -1,0 +1,12 @@
+
+Host *
+        ServerAliveInterval 240
+
+# Some convenient ssh proxies I use to connect to some networks
+Host *.tcbe
+        ProxyCommand ssh taquilla@api.transcaribe.net nc $(echo %h | sed 's/\.tcbe$//') %p
+Host *.cmc
+        ProxyCommand ssh taquilla@api.mexicowaterjets.com.mx nc $(echo %h | sed 's/\.cmc$//') %p
+Host *.ferrymx
+        ProxyCommand ssh taquilla@13.85.81.197 nc $(echo %h | sed 's/\.ferrymx$//') %p
+
