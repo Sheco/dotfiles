@@ -1,5 +1,5 @@
 # dotfiles
-My set of personal configuracion files
+My set of personal configuration files
 
 Over the years, I've gotten used to reinstalling and setting up my environments, most of the time I try to stick to 
 default settings and when I find something that doesn't do what I need it to do, I do some research to set things up 
@@ -19,3 +19,5 @@ For example, the bashrc can be loaded adding this to the preexisting .bashrc, as
 ```
 source ~/dotfiles/bashrc
 ```
+
+They should have comments with more instructions
