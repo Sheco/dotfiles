@@ -10,8 +10,8 @@ set expandtab
 
 set hidden
 
-" Setup: add colors/atom-dark.vim
-colorscheme atom-dark-256
+colorscheme PaperColor
+set background=dark
 
 " Setup: add autoload/plug.vim
 call plug#begin('~/.vim/plugged')
@@ -20,6 +20,7 @@ Plug 'tpope/vim-sensible'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'vim-airline/vim-airline'
+Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
 
