@@ -21,10 +21,13 @@ let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'kshenoy/vim-signature'
-Plug 'vim-airline/vim-airline'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'itchyny/lightline.vim'
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 
