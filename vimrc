@@ -28,12 +28,17 @@ call plug#end()
 set splitbelow
 set splitright
 
+" Shift-arrows are reserved to switch between
+" tmux tabs, so shift-h and shift-l are then
+" used to switch between vim buffers
+nmap <S-H> :bp<cr>
+nmap <S-L> :bn<cr>
 
-nmap <C-J> <C-W>j
-nmap <C-K> <C-W>k
-nmap <C-H> <C-W>h
-nmap <C-L> <C-W>l
+nmap <Leader>, <C-W><C-W>
+
 nmap <C-B> :CtrlPBuffer<cr>
+
+let g:airline#extensions#tabline#enabled = 1
 
 "--- autocommands
 augroup autosourcing
