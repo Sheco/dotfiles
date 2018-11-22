@@ -1,8 +1,6 @@
 
 let g:airline_powerline_fonts = 1
 let mapleader = ',' 
-set nocompatible
-set backspace=2
 set guifont=Consolas:h11
 
 " my favorite tabs are 4 spaces
@@ -18,14 +16,12 @@ colorscheme atom-dark-256
 " Setup: add autoload/plug.vim
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-sensible'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'vim-airline/vim-airline'
 call plug#end()
 
-" search
-set incsearch
-set hlsearch
 
 " splits
 set splitbelow
