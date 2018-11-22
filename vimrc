@@ -17,7 +17,6 @@ colorscheme atom-dark-256
 
 " Setup: add autoload/plug.vim
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-vinegar'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'kshenoy/vim-signature'
@@ -38,7 +37,6 @@ nmap <C-K> <C-W>k
 nmap <C-H> <C-W>h
 nmap <C-L> <C-W>l
 nmap <C-B> :CtrlPBuffer<cr>
-nmap <Leader>1 :NERDTreeToggle<cr>
 
 "--- autocommands
 augroup autosourcing
