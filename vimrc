@@ -15,6 +15,8 @@ set hidden
 colorscheme PaperColor
 set background=dark
 
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+
 " Setup: add autoload/plug.vim
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-vinegar'
