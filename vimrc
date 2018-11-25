@@ -17,7 +17,7 @@ set colorcolumn=72
 
 " hidden buffers, you can switch between files and the changes don't
 " have to be written to disk until you're ready to save everything
-" you wan use :wa for that
+" you want to use :wa for that
 set hidden
 
 " splits
@@ -110,13 +110,13 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
-  " to use flow, first npm install -g flow-bin
-  " you can stop the daemon with "flow stop"
-  Plug 'wokalski/autocomplete-flow'
-  " For func argument completion
-  Plug 'Shougo/neosnippet'
-  Plug 'Shougo/neosnippet-snippets'
-  let g:neosnippet#enable_completed_snippet = 1
+" to use flow, first npm install -g flow-bin
+" you can stop the daemon with "flow stop"
+Plug 'wokalski/autocomplete-flow'
+" For func argument completion
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
+let g:neosnippet#enable_completed_snippet = 1
 
 " better terminal integration, it improves text pasting and mouse support
 Plug 'wincent/terminus'
