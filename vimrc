@@ -125,9 +125,14 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' }
 
-Plug 'carlitux/deoplete-ternjs'
+  " to use flow, first npm install -g flow-bin
+  " you can stop the daemon with "flow stop"
+  Plug 'wokalski/autocomplete-flow'
+  " For func argument completion
+  Plug 'Shougo/neosnippet'
+  Plug 'Shougo/neosnippet-snippets'
+  let g:neosnippet#enable_completed_snippet = 1
 
 " better terminal integration, it improves text pasting and mouse support
 Plug 'wincent/terminus'
