@@ -129,6 +129,9 @@ Plug 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' }
 
 Plug 'carlitux/deoplete-ternjs'
 
+" better terminal integration, it improves text pasting and mouse support
+Plug 'wincent/terminus'
+
 Plug 'airblade/vim-gitgutter'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'mustache/vim-mustache-handlebars'
