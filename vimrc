@@ -7,7 +7,7 @@ set softtabstop=4
 set tabstop=4
 set expandtab
 
-" javascript standard call for 2 space indentation levels
+" javascript standard calls for 2 space indentation levels
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2
 
 " avoid wordwrapping and show a vertical line at column 72
@@ -19,10 +19,6 @@ set colorcolumn=72
 " have to be written to disk until you're ready to save everything
 " you wan use :wa for that
 set hidden
-
-" I like dark color schemes
-colorscheme PaperColor
-set background=dark
 
 " splits
 set splitbelow
@@ -40,21 +36,9 @@ let g:airline#extensions#tabline#enabled = 1
 let g:ale_linters = {'javascript': ['standard']}
 let g:ale_fixers = {'javascript': ['standard']}
 
-let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 0
 
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_ignore_case = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#enable_camel_case = 1
-let g:deoplete#enable_refresh_always = 1
-let g:deoplete#max_abbr_width = 0
-let g:deoplete#max_menu_width = 0
-let g:deoplete#omni#input_patterns = get(g:,'deoplete#omni#input_patterns',{})
-
-let g:tern_request_timeout = 1
-let g:tern_request_timeout = 6000
-let g:tern#command = ["tern"]
-let g:tern#arguments = ["--persistent"]
 
 " Install Vim Plug if not installed
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -160,3 +144,8 @@ augroup autosourcing
 	autocmd!
 	autocmd BufWritePost vimrc source %
 augroup END
+
+" I like dark color schemes
+colorscheme PaperColor
+set background=dark
+
