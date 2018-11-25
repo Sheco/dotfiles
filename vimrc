@@ -4,9 +4,11 @@ set guifont=Consolas:h11
 " my favorite tabs are 4 spaces
 set shiftwidth=4
 set softtabstop=4
+set tabstop=4
 set expandtab
 
-set number
+" javascript standard call for 2 space indentation levels
+autocmd FileType javascript setlocal ts=2 sts=2 sw=2
 set nowrap
 set colorcolumn=72
 
