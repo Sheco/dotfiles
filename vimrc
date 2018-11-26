@@ -20,6 +20,8 @@ set colorcolumn=72
 " you want to use :wa for that
 set hidden
 
+set termguicolors
+
 " splits
 set splitbelow
 set splitright
@@ -31,6 +33,7 @@ set updatetime=400
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 " the standard linter works fine, remember to npm i -g standard
 let g:ale_linters = {'javascript': ['standard']}
