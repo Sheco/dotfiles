@@ -47,11 +47,10 @@ let g:flow#enable = 0
 
 " Install Vim Plug if not installed
 if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+  silent !curl -fsLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
-
 " Setup: add autoload/plug.vim
 call plug#begin('~/.vim/plugged')
 " tpope's vinegar improves the vim file manager
@@ -140,6 +139,9 @@ augroup autosourcing
 augroup END
 
 " I like dark color schemes
-colorscheme nova
 set background=dark
+try
+    colorscheme nova
+catch
+endtry
 
