@@ -104,6 +104,9 @@ Plug 'w0rp/ale'
 Plug 'flowtype/vim-flow'
 Plug 'ajh17/VimCompletesMe'
 
+Plug 'sheerun/vim-polyglot'
+Plug 'trevordmiller/nova-vim'
+
 " better terminal integration, it improves text pasting and mouse support
 Plug 'wincent/terminus'
 
@@ -132,6 +135,6 @@ augroup autosourcing
 augroup END
 
 " I like dark color schemes
-colorscheme PaperColor
+colorscheme nova
 set background=dark
 
