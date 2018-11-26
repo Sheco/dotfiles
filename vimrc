@@ -35,6 +35,8 @@ let g:airline#extensions#tabline#enabled = 1
 " the standard linter works fine, remember to npm i -g standard
 let g:ale_linters = {'javascript': ['standard']}
 let g:ale_fixers = {'javascript': ['standard']}
+let g:ale_sign_error = '✖'
+let g:ale_sign_warning = '⚠'
 
 let g:ale_completion_enabled = 0
 
