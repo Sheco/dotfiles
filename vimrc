@@ -38,7 +38,7 @@ let g:ale_fixers = {'javascript': ['standard']}
 
 let g:ale_completion_enabled = 0
 
-let g:deoplete#enable_at_startup = 1
+let g:flow#enable = 0
 
 " Install Vim Plug if not installed
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -101,22 +101,8 @@ Plug 'mattn/emmet-vim'
 " Great asynchronous linter, it works as you type
 Plug 'w0rp/ale'
 
-" The next block of plugins are needed for deoplete, an autocompleter
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-
-" to use flow, first npm install -g flow-bin
-" you can stop the daemon with "flow stop"
-Plug 'wokalski/autocomplete-flow'
-" For func argument completion
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
-let g:neosnippet#enable_completed_snippet = 1
+Plug 'flowtype/vim-flow'
+Plug 'ajh17/VimCompletesMe'
 
 " better terminal integration, it improves text pasting and mouse support
 Plug 'wincent/terminus'
