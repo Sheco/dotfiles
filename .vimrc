@@ -104,9 +104,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'mattn/emmet-vim'
 
 " Great asynchronous linter, it works as you type
-Plug 'w0rp/ale'
+Plug 'w0rp/ale', {'do': 'npm install -g standard'}
 
-Plug 'flowtype/vim-flow'
+Plug 'flowtype/vim-flow', {'do': 'npm install -g flow-bin'}
 Plug 'ajh17/VimCompletesMe'
 
 Plug 'sheerun/vim-polyglot'
