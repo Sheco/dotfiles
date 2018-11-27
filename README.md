@@ -12,12 +12,4 @@ Unfortunately this is not always efficient and some things are lost in time, whi
 
 # Installing
 
-To install these files, they can either be copied to the appropriate location, symlinked or included from other files.
-
-For example, the bashrc can be loaded adding this to the preexisting .bashrc, assuming the repo was cloned to ~/dotfiles
-
-```
-source ~/dotfiles/bashrc
-```
-
-They should have comments with more instructions
+Run ```install.sh``` in this directory, it will symlink the dotfiles, overwriting any existing files (watch out) 
