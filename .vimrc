@@ -1,5 +1,4 @@
 let mapleader = ',' 
-set guifont=Consolas:h11
 
 " my favorite tabs are 4 spaces
 set shiftwidth=4
@@ -21,6 +20,10 @@ set colorcolumn=72
 set hidden
 
 set termguicolors
+" The following is needed in tmux/screen
+" :help xterm-true-color
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 " splits
 set splitbelow
@@ -35,7 +38,7 @@ let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
-" the standard linter works fine, remember to npm i -g standard
+" the standard linter works fine
 let g:ale_linters = {'javascript': ['standard']}
 let g:ale_fixers = {'javascript': ['standard']}
 let g:ale_sign_error = '✖'
@@ -51,7 +54,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
-" Setup: add autoload/plug.vim
+
 call plug#begin('~/.vim/plugged')
 " tpope's vinegar improves the vim file manager
 " the most common shortcut is - you can use it to jump back
@@ -108,15 +111,19 @@ Plug 'w0rp/ale', {'do': 'npm install -g standard'}
 Plug 'flowtype/vim-flow', {'do': 'npm install -g flow-bin'}
 Plug 'ajh17/VimCompletesMe'
 
+" programming language plugins
+Plug 'mustache/vim-mustache-handlebars'
 Plug 'sheerun/vim-polyglot'
-Plug 'trevordmiller/nova-vim'
 
 " better terminal integration, it improves text pasting and mouse support
 Plug 'wincent/terminus'
 
+" show the git status of each line on the vim gutter (left side)
 Plug 'airblade/vim-gitgutter'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'mustache/vim-mustache-handlebars'
+
+" nice colorscheme
+Plug 'trevordmiller/nova-vim'
+
 call plug#end()
 
 " In my environment, Shift-arrows are reserved to switch between
@@ -127,6 +134,8 @@ nmap <S-L> :bn<cr>
 
 " ,, will jump to the previous window
 nmap <Leader>, <C-W><C-W>
+" ,c will close the current window
+nmap <Leader>c <C-W>c
 
 " Control-B will load ControlP's buffer switcher
 " Control-B and then enter will swith to the last buffer
@@ -135,7 +144,7 @@ nmap <C-B> :CtrlPBuffer<cr>
 "--- autocommands
 augroup autosourcing
 	autocmd!
-	autocmd BufWritePost vimrc source %
+	autocmd BufWritePost .vimrc source %
 augroup END
 
 " I like dark color schemes
