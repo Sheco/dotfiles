@@ -32,7 +32,8 @@ set splitright
 " the default updatetime of 4000 is too long for some tools
 " like gitgutter
 set updatetime=400
-" hide dotfiles in the netrw explorer
+
+" hide dotfiles in the netrw explorer, show them using gh
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
 let g:airline#extensions#tabline#enabled = 1
