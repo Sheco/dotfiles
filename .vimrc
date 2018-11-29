@@ -154,3 +154,7 @@ try
 catch
 endtry
 
+augroup ProjectDrawer
+    autocmd!
+    autocmd VimEnter * if argc() == 0 | Explore! | endif
+augroup END
