@@ -7,6 +7,7 @@ fi
 
 # User specific aliases and functions
 export PATH=$HOME/.npm-packages/bin:$PATH
+export NODE_PATH=$HOME/.npm-packages/lib/node_modules
 export EDITOR=vim
 export VISUAL=vim
 
