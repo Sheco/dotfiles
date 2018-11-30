@@ -12,7 +12,6 @@ autocmd FileType javascript setlocal ts=2 sts=2 sw=2
 " avoid wordwrapping and show a vertical line at column 80
 set nowrap
 set colorcolumn=80
-
 " hidden buffers, you can switch between files and the changes don't
 " have to be written to disk until you're ready to save everything
 " you want to use :wa for that
@@ -158,3 +157,7 @@ augroup ProjectDrawer
     autocmd!
     autocmd VimEnter * if argc() == 0 | Explore! | endif
 augroup END
+
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
