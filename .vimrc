@@ -9,10 +9,9 @@ set expandtab
 " javascript standard calls for 2 space indentation levels
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2
 
-" avoid wordwrapping and show a vertical line at column 72
-" so you start thinking about cutting the lines
+" avoid wordwrapping and show a vertical line at column 80
 set nowrap
-set colorcolumn=72
+set colorcolumn=80
 
 " hidden buffers, you can switch between files and the changes don't
 " have to be written to disk until you're ready to save everything
