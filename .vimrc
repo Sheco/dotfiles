@@ -82,10 +82,6 @@ Plug 'tpope/vim-surround'
 " all this is handy, but sometimes I prefer to use "tig"
 Plug 'tpope/vim-fugitive'
 
-" ctrlp introduces a fuzzy file finder when pressing Control+P
-" it also has a handy buffer manager, which I bound to Control+B (down below)
-Plug 'ctrlpvim/ctrlp.vim'
-
 " vim-signature adds a new column on the left side with marks for each lie
 " for example, in this line, in command mode:
 " ma toggle Mark "a"
@@ -123,6 +119,7 @@ Plug 'airblade/vim-gitgutter'
 " nice colorscheme
 Plug 'trevordmiller/nova-vim'
 
+Plug 'junegunn/fzf.vim'
 Plug 'jlanzarotta/bufexplorer'
 call plug#end()
 
@@ -137,9 +134,10 @@ nmap <Leader>, <C-W><C-W>
 " ,c will close the current window
 nmap <Leader>c <C-W>c
 
-" Control-B will load ControlP's buffer switcher
-" Control-B and then enter will swith to the last buffer
-nmap <C-B> :CtrlPBuffer<cr>
+" Control-P will load the fuzzy file finder
+nmap <C-P> :FZF<cr>
+
+" Control-B will load the buffexplorer
 nmap <C-B> <Leader>be
 
 "--- autocommands
@@ -154,11 +152,6 @@ try
     colorscheme nova
 catch
 endtry
-
-augroup ProjectDrawer
-    autocmd!
-    autocmd VimEnter * if argc() == 0 | Explore! | endif
-augroup END
 
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
