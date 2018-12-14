@@ -8,6 +8,7 @@ set expandtab
 
 " javascript standard calls for 2 space indentation levels
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2
+autocmd FileType html setlocal ts=2 sts=2 sw=2
 
 " avoid wordwrapping and show a vertical line at column 80
 set nowrap
@@ -39,7 +40,7 @@ let g:airline_powerline_fonts = 1
 
 " the standard linter works fine
 let g:ale_linters = {'javascript': ['standard']}
-let g:ale_fixers = {'javascript': ['standard']}
+let g:ale_fixers = {'javascript': ['standard'], 'html': ['prettier']}
 let g:ale_sign_error = '✖'
 let g:ale_sign_warning = '⚠'
 
