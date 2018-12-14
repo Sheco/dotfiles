@@ -34,7 +34,7 @@ set updatetime=400
 " hide dotfiles in the netrw explorer, show them using gh
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
 " the standard linter works fine
@@ -123,6 +123,7 @@ Plug 'airblade/vim-gitgutter'
 " nice colorscheme
 Plug 'trevordmiller/nova-vim'
 
+Plug 'jlanzarotta/bufexplorer'
 call plug#end()
 
 " In my environment, Shift-arrows are reserved to switch between
@@ -139,6 +140,7 @@ nmap <Leader>c <C-W>c
 " Control-B will load ControlP's buffer switcher
 " Control-B and then enter will swith to the last buffer
 nmap <C-B> :CtrlPBuffer<cr>
+nmap <C-B> <Leader>be
 
 "--- autocommands
 augroup autosourcing
