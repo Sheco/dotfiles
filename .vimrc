@@ -11,7 +11,9 @@ autocmd FileType javascript setlocal ts=2 sts=2 sw=2
 autocmd FileType html setlocal ts=2 sts=2 sw=2
 
 " avoid wordwrapping and show a vertical line at column 80
-set nowrap
+set wrap
+set virtualedit=all
+set linebreak
 set colorcolumn=80
 " hidden buffers, you can switch between files and the changes don't
 " have to be written to disk until you're ready to save everything
