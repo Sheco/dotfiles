@@ -7,7 +7,9 @@ It's similar to GNU screen, but it's a lot better, because it has a lot more fea
 
 One of the most common ways to use it is to execute it in a remote server, so that you can have a stable session so you can reconnect to it even if your connection were to drop, you can always come back and everything will be just as you left it.
 
-Its true power comes from creating windows and panes, a window can be thought of a tab, it's a full screen of content, while a pane is a portion of the screen that has been split.
+tmux can also be used as a local terminal manager to handle tabs/splits.
+
+Its true power comes from creating windows and panes, a window can be thought of like a tab, it's a full screen of terminal content, while a pane is the container where the shell/app is run, by default each window has one pane, but it can be split into multiple panes.
 
 ### Custom settings
 
@@ -18,6 +20,8 @@ The tmux repo is: https://github.com/gpakosz
 You need to copy both the .tmux.conf and the .tmux.conf.local files to your home directory, the .tmux.conf.local file has some extra tweaks you will want to review.
 
 I have my own copy of this file in: https://github.com/Sheco/dotfiles/blob/master/.tmux.conf.local
+
+This document assumes you're using this configuration, as some of the shortcuts have been customized.
 
 ### Creating a new session
 
@@ -37,6 +41,20 @@ To detach from a session you can either close your terminal application window o
 ### Reattaching to a session
 
 Normally you will only have a single session running, in this most common scenario, to attach to that session you only need to run ```tmux attach``` in the command line, or its short version, which is ```tmux a```
+
+If you have multiple sessions running, you can list them on the command line, for example:
+
+```
+$ tmux list-sessions
+test: 2 windows (created Thu Feb 14 13:25:46 2019) [80x23]
+important: 3 windows (created Thu Feb 14 13:20:42 2019) [80x23]
+```
+
+After that you can reattach to a session using the -t argument to ```tmux attach```, for example:
+
+```
+$ tmux attach -t test
+```
 
 ### Windows
 
