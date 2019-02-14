@@ -84,3 +84,11 @@ When you enter the scrollback mode, you'll see a yellow label on the top-right c
 | Paste buffer                   | ``` {prefix} p ``` |
 | Paster specific buffer         | ``` {prefix} P ``` |
 
+
+### Mouse
+
+Newer versions of tmux include mouse support, I would advocate in favor of using mostly keyboard shortcuts to interact with tmux as much as possible, but in certain scenarios, using the mouse can certainly be convenient.
+
+For example, resizing panes with the mouse is a lot easier than using the keyboard.
+
+On the other hand, switching between windows, it's better with the keyboard.
