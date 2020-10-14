@@ -298,6 +298,10 @@ bind C-a send-prefix
 bind -n S-Right next-window
 bind -n S-Left previous-window
 
+# shift windows leftand right with control+shift/arrow-key
+bind-key -n C-S-Left swap-window -t -1\; select-window -t -1
+bind-key -n C-S-Right swap-window -t +1\; select-window -t +1
+
 # -- custom variables ----------------------------------------------------------
 # to define a custom #{foo} variable, define a POSIX shell function between the
 # '# EOF' and the '# "$@"' lines. Please note that the opening brace { character
