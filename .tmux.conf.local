@@ -273,6 +273,8 @@ tmux_conf_copy_to_os_clipboard=false
 # -- user customizations -------------------------------------------------------
 # this is the place to override or undo settings
 
+set-environment -g 'SSH_AUTH_SOCK' ~/.ssh/ssh_auth_sock
+
 # increase history size
 set -g history-limit 10000
 
