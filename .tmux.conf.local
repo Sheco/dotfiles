@@ -381,8 +381,8 @@ bind -n S-Right next-window
 bind -n S-Left previous-window
 
 # shift windows leftand right with control+shift/arrow-key
-bind-key -n C-S-Left swap-window -t -1\; select-window -t -1
-bind-key -n C-S-Right swap-window -t +1\; select-window -t +1
+bind-key -n M-S-Left swap-window -t -1\; select-window -t -1
+bind-key -n M-S-Right swap-window -t +1\; select-window -t +1
 
 # -- tpm -----------------------------------------------------------------------
 
