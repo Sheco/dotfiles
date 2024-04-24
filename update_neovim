@@ -1,0 +1,3 @@
+#!/bin/sh
+curl -L https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage -o $HOME/.local/bin/nvim
+chmod +x $HOME/.local/bin/nvim
