@@ -13,7 +13,7 @@ Unfortunately this is not always efficient and some things are lost in time, whi
 
 # tmux
 
-My favorite dotfile, the Oh My tmux! configuration, copy or link (.tmux/.tmux.conf)[.tmux/.tmux.conf] and (.tmux.conf.local)[.tmux.local] to your home directory.
+My favorite dotfile, the Oh My tmux! configuration, copy or link [.tmux/.tmux.conf](.tmux/.tmux.conf) and [.tmux.conf.local](.tmux.local) to your home directory.
 
 Make sure you have a recent version of tmux, you may have to download and compile the latest version on your own, I used it with tmux 3.3a
 
