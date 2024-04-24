@@ -1,7 +1,0 @@
-# review /etc/tigrc for more settings/bindings
-
-bind status	C	!>git commit
-bind status P !>git push
-bind stage	C	!>git commit
-bind stage  P !>git push
-
