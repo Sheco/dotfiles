@@ -19,6 +19,26 @@ Make sure you have a recent version of tmux, you may have to download and compil
 
 Please review the (keyboard bindings)[https://github.com/gpakosz/.tmux?tab=readme-ov-file#bindings]
 
+tmux's prefix is Control+A
+
+shortcut   | Description
+-----------|-----------
+\<prefix> ? | List all keybindings
+\<prefix> :new-session | Create new session
+\<prefix> $ | rename current session
+\<prefix> w | List windows
+\<prefix> s | List sessions
+\<prefix> d | Detach from tmux
+\<prefix> c | Create a new window
+\<prefix> , | Rename current window
+\<prefix> - | Split pane vertically
+\<prefix> _ | Split pane horizontally
+shift-left, shift-right | activate left/right window
+alt-shift-left, alt-shift-right | Switch this window with the one on the left/right 
+
+I recommend launching tmux and having multiple sessions locally and moving through them in the local tmux terminal,
+and having new terminal tabs each for a different remote server. Hence each tab is a different computer, each one
+with a tmux instance managing multiple shells and persistence.
 
 # kitty
 
@@ -27,3 +47,14 @@ My favorite terminal emulator, Kitty, it can be downloaded from the [Kitty Websi
 Copy both (kitty/kitty.conf)[kitty/kitty.conf] and (kitty/current-theme.conf)[current-theme.conf) to `$HOME/.config/kitty`.
 
 Please review the Keyboard bindings pressing Control+Shift+F1
+
+Kitty's prefix is Control+Shift
+shortcut | Description
+---------|-----------
+\<prefix> t | New tab
+\<prefix> left, \<prefix> right | Move to the previous/next tab
+\<prefix> <enter> | New pane
+\<prefix> ], \<prefix> [ | Prev/Next pane
+\<prefix> F2 | Edit kitty.conf
+\<prefix> F5 | Reload config
+
