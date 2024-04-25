@@ -53,7 +53,7 @@ shortcut | Description
 ---------|-----------
 \<prefix> t | New tab
 \<prefix> left, \<prefix> right | Move to the previous/next tab
-\<prefix> <enter> | New pane
+\<prefix> \<enter> | New pane
 \<prefix> ], \<prefix> [ | Prev/Next pane
 \<prefix> F2 | Edit kitty.conf
 \<prefix> F5 | Reload config
