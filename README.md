@@ -75,7 +75,7 @@ shortcut | Description
 \<prefix> \<space> | List all files
 \<prefix> / | search in all files
 \<prefix> be | Buffer explorer
-\<prefix> bg | Git change explorer
+\<prefix> ge | Git explorer
 \<prefix> l | Open lazy window to update plugins
 \<prefix>cm | Open mason window to update LSPs
 \<prefix> e | open sidebar file manager 
