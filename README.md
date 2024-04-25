@@ -26,11 +26,11 @@ shortcut   | Description
 \<prefix> ? | List all keybindings
 \<prefix> :new-session | Create new session
 \<prefix> $ | rename current session
-\<prefix> w | List windows
+\<prefix> w | List windows (tmux tabs)
 \<prefix> s | List sessions
 \<prefix> d | Detach from tmux
-\<prefix> c | Create a new window
-\<prefix> , | Rename current window
+\<prefix> c | Create a new window (a tmux tab)
+\<prefix> , | Rename current window (tmux tab)
 \<prefix> - | Split pane vertically
 \<prefix> _ | Split pane horizontally
 shift-left, shift-right | activate left/right window
