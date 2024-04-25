@@ -74,11 +74,11 @@ shortcut | Description
 \<prefix> , | List buffers
 \<prefix> \<space> | List all files
 \<prefix> / | search in all files
+\<prefix> e | open sidebar file manager 
 \<prefix> be | Buffer explorer
 \<prefix> ge | Git explorer
 \<prefix> l | Open lazy window to update plugins
 \<prefix>cm | Open mason window to update LSPs
-\<prefix> e | open sidebar file manager 
 C-h, C-l | move to the pane on the left/right
 \<prefix> ul | disable line numbers and other visual cues (useful to copy text)
 \<prefix> cd | show diagnostics
