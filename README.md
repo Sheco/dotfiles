@@ -58,3 +58,41 @@ shortcut | Description
 \<prefix> F2 | Edit kitty.conf
 \<prefix> F5 | Reload config
 
+
+
+# neovim
+
+Additionally, please install neovim and [my LazyVim configuration](https://github.com/Sheco/LazyVimStarter)
+
+vim's prefix is space in command mode. (It's actually called leader in vim, but I'm using prefix here)
+
+Please review the keyboard bindings at [LazyVim's keybindings page](https://www.lazyvim.org/keymaps)
+
+shortcut | Description
+---------|-----------
+\<prefix> sk | Show keymaps
+\<prefix> , | List buffers
+\<prefix> \<space> | List all files
+\<prefix> / | search in all files
+\<prefix> be | Buffer explorer
+\<prefix> bg | Git change explorer
+\<prefix> l | Open lazy window to update plugins
+\<prefix>cm | Open mason window to update LSPs
+\<prefix> e | open sidebar file manager 
+C-h, C-l | move to the pane on the left/right
+\<prefix> ul | disable line numbers and other visual cues (useful to copy text)
+\<prefix> cd | show diagnostics
+\<prefix> ca | show action fixes
+]d [d | next/prev diagnostic
+]e [e | next/prev error
+K | show current word's LSP documentation
+gd | Go to current word's LSP definition
+\<prefix> cr | Rename/refactor current word
+shift h, shift l | Move to the prev/next buffer
+\<prefix> bp | Pin current buffer
+\<prefix> bP | Delete unpinned buffers
+\<prefix> gsr | Replace surrounding
+
+
+
+
