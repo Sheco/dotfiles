@@ -17,8 +17,13 @@ My favorite dotfile, the Oh My tmux! configuration, copy or link [.tmux/.tmux.co
 
 Make sure you have a recent version of tmux, you may have to download and compile the latest version on your own, I used it with tmux 3.3a
 
+Please review the (keyboard bindings)[https://github.com/gpakosz/.tmux?tab=readme-ov-file#bindings]
+
+
 # kitty
 
 My favorite terminal emulator, Kitty, it can be downloaded from the [Kitty Website](https://sw.kovidgoyal.net/kitty/binary/).
 
 Copy both (kitty/kitty.conf)[kitty/kitty.conf] and (kitty/current-theme.conf)[current-theme.conf) to `$HOME/.config/kitty`.
+
+Please review the Keyboard bindings pressing Control+Shift+F1
