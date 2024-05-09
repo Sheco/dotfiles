@@ -27,3 +27,26 @@ My favorite terminal emulator, Kitty, it can be downloaded from the [Kitty Websi
 Copy both (kitty/kitty.conf)[kitty/kitty.conf] and (kitty/current-theme.conf)[current-theme.conf) to `$HOME/.config/kitty`.
 
 Please review the Keyboard bindings pressing Control+Shift+F1
+
+# Gnome extensions
+
+To set up GNOME the way I like it, I install these extensions:
+
+- AATWS (Advanced Alt-Tab Window Switcher) 
+- AppIndicator and KStatusNotifierItem Support 
+- Frippery Move Clock 
+- Vitals
+
+The key extension is AATWS which modifies alt-tab and makes it super usable, I change these settings:
+- I go to GNOME's keyboard settings and set Alt-tab to be a "Window switcher" and Super-tab an "Application switcher"
+- In AAWTS's common settings: 
+	- Super Key action: app Switcher (this makes AATWS replace the Activities Overview)
+- In AATWS's window switcher:
+	- Filter: Current monitor (I like this, this is the main reason I installed this extension)
+- In AATS's application switcher:
+	- Filter: Current monitor
+	- Default Sorting: Stable sequence
+- In AATWS's dock mode:
+	- Hot edge action: application switcher (now we have a dock that hides in the bottom)
+	- Show app windows instead of direct activation: focused multi-window apps
+
