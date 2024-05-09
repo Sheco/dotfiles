@@ -42,7 +42,7 @@ with a tmux instance managing multiple shells and persistence.
 
 # kitty
 
-My favorite terminal emulator, Kitty, it can be downloaded from the [Kitty Website](https://sw.kovidgoyal.net/kitty/binary/).
+My favorite terminal emulator, Kitty, it can be downloaded from the [Kitty Website](https://sw.kovidgoyal.net/kitty/binary/) or you can use the [update_kitty](/update_kitty) script included in this repo.
 
 Copy both (kitty/kitty.conf)[kitty/kitty.conf] and (kitty/current-theme.conf)[current-theme.conf) to `$HOME/.config/kitty`.
 
@@ -61,6 +61,8 @@ shortcut | Description
 
 
 # neovim
+
+You can download a nightly version from  [neovim's nightly images](https://github.com/neovim/neovim/releases) or executing the [update_neovim](/update_neovim) script included in this repo. 
 
 Additionally, please install neovim and [my LazyVim configuration](https://github.com/Sheco/LazyVimStarter)
 
