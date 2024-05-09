@@ -19,6 +19,26 @@ Make sure you have a recent version of tmux, you may have to download and compil
 
 Please review the (keyboard bindings)[https://github.com/gpakosz/.tmux?tab=readme-ov-file#bindings]
 
+tmux's prefix is Control+A
+
+shortcut   | Description
+-----------|-----------
+\<prefix> ? | List all keybindings
+\<prefix> :new-session | Create new session
+\<prefix> $ | rename current session
+\<prefix> w | List windows (tmux tabs)
+\<prefix> s | List sessions
+\<prefix> d | Detach from tmux
+\<prefix> c | Create a new window (a tmux tab)
+\<prefix> , | Rename current window (tmux tab)
+\<prefix> - | Split pane vertically
+\<prefix> _ | Split pane horizontally
+shift-left, shift-right | activate left/right window
+alt-shift-left, alt-shift-right | Switch this window with the one on the left/right 
+
+I recommend launching tmux and having multiple sessions locally and moving through them in the local tmux terminal,
+and having new terminal tabs each for a different remote server. Hence each tab is a different computer, each one
+with a tmux instance managing multiple shells and persistence.
 
 # kitty
 
@@ -27,6 +47,52 @@ My favorite terminal emulator, Kitty, it can be downloaded from the [Kitty Websi
 Copy both (kitty/kitty.conf)[kitty/kitty.conf] and (kitty/current-theme.conf)[current-theme.conf) to `$HOME/.config/kitty`.
 
 Please review the Keyboard bindings pressing Control+Shift+F1
+
+Kitty's prefix is Control+Shift
+shortcut | Description
+---------|-----------
+\<prefix> t | New tab
+\<prefix> left, \<prefix> right | Move to the previous/next tab
+\<prefix> \<enter> | New pane
+\<prefix> ], \<prefix> [ | Prev/Next pane
+\<prefix> F2 | Edit kitty.conf
+\<prefix> F5 | Reload config
+
+
+
+# neovim
+
+Additionally, please install neovim and [my LazyVim configuration](https://github.com/Sheco/LazyVimStarter)
+
+vim's prefix is space in command mode. (It's actually called leader in vim, but I'm using prefix here)
+
+Please review the keyboard bindings at [LazyVim's keybindings page](https://www.lazyvim.org/keymaps)
+
+shortcut | Description
+---------|-----------
+\<prefix> sk | Show keymaps
+\<prefix> , | List buffers
+\<prefix> \<space> | List all files
+\<prefix> / | search in all files
+\<prefix> e | open sidebar file manager 
+\<prefix> be | Buffer explorer
+\<prefix> ge | Git explorer
+\<prefix> l | Open lazy window to update plugins
+\<prefix>cm | Open mason window to update LSPs
+C-h, C-l | move to the pane on the left/right
+\<prefix> ul | disable line numbers and other visual cues (useful to copy text)
+\<prefix> cd | show diagnostics
+\<prefix> ca | show action fixes
+]d [d | next/prev diagnostic
+]e [e | next/prev error
+K | show current word's LSP documentation
+gd | Go to current word's LSP definition
+\<prefix> cr | Rename/refactor current word
+shift h, shift l | Move to the prev/next buffer
+\<prefix> bp | Pin current buffer
+\<prefix> bP | Delete unpinned buffers
+\<prefix> gsr | Replace surrounding
+
 
 # Gnome extensions
 
@@ -49,4 +115,3 @@ The key extension is AATWS which modifies alt-tab and makes it super usable, I c
 - In AATWS's dock mode:
 	- Hot edge action: application switcher (now we have a dock that hides in the bottom)
 	- Show app windows instead of direct activation: focused multi-window apps
-
