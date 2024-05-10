@@ -112,6 +112,7 @@ To set up GNOME the way I like it, I install these extensions:
 The key extension is AATWS which modifies alt-tab and makes it super usable, I change these settings:
 - I go to GNOME's keyboard settings and set Alt-tab to be a "Window switcher" and Super-tab an "Application switcher"
 - In AAWTS's common settings: 
+	- Default Monitor: Monitor with focused window
 	- Super Key action: app Switcher (this makes AATWS replace the Activities Overview)
 - In AATWS's window switcher:
 	- Filter: Current monitor (I like this, this is the main reason I installed this extension)
