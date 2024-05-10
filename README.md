@@ -94,6 +94,9 @@ shift h, shift l | Move to the prev/next buffer
 \<prefix> bp | Pin current buffer
 \<prefix> bP | Delete unpinned buffers
 \<prefix> gsr | Replace surrounding
+z= | Open spell checking suggestions
+
+For more spell checking options check [this blog post](https://johncodes.com/posts/2023/02-25-nvim-spell/)
 
 
 # Gnome extensions
