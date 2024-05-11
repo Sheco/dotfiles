@@ -118,8 +118,9 @@ The key extension is AATWS which modifies alt-tab and makes it super usable, I c
 	- Filter: Current monitor (I like this, this is the main reason I installed this extension)
 - In AATS's application switcher:
 	- Filter: Current monitor
-	- Default Sorting: Stable sequence
+	- Default Sorting: Most Recently Used
 - In AATWS's dock mode:
 	- Hot edge action: application switcher (now we have a dock that hides in the bottom)
 	- Hot edge monitor: All
 	- Show app windows instead of direct activation: focused multi-window apps
+	- Force App Switcher Stable Sequence: > [!NOTE]
