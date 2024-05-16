@@ -62,7 +62,7 @@ shortcut | Description
 
 # neovim
 
-You can download a nightly version from  [neovim's nightly images](https://github.com/neovim/neovim/releases) or executing the [update_neovim](/update_neovim) script included in this repo. 
+You can download a nightly version from  [neovim's nightly images](https://github.com/neovim/neovim/releases) or executing the [update_neovim](/update_neovim) script included in this repo, make sure you add `$HOME/.local/nvim-linux64/bin` to your $PATH
 
 Additionally, please install neovim and [my LazyVim configuration](https://github.com/Sheco/LazyVimStarter)
 
