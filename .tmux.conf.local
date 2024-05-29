@@ -366,6 +366,8 @@ tmux_conf_copy_to_os_clipboard=false
 
 # -- user customizations -------------------------------------------------------
 
+set -g default-shell /usr/bin/fish
+
 # this is the place to override or undo settings
 
 # increase history size
