@@ -11,6 +11,21 @@ being locked in an old way of doing things.
 
 Unfortunately this is not always efficient and some things are lost in time, which is a shame.
 
+# asdf
+
+First and foremost, I install this package manager following the instructions from [their website](https://asdf-vm.com/guide/getting-started.html)
+- Install dependencies
+- Clone repo
+- Install helper for my shell (currently trying fish)
+
+I then install the software I use:
+
+```fish
+for plugin in golang lazygit neovim nodejs rust tmux tree-sitter
+asdf plugin add $plugin
+asdf install $plugin latest
+asdf global $plugin latest
+```
 # tmux
 
 My favorite dotfile, the Oh My tmux! configuration, copy or link [.tmux/.tmux.conf](.tmux/.tmux.conf) and [.tmux.conf.local](.tmux.local) to your home directory.
@@ -62,9 +77,7 @@ shortcut | Description
 
 # neovim
 
-You can download a nightly version from  [neovim's nightly images](https://github.com/neovim/neovim/releases) or executing the [update_neovim](/update_neovim) script included in this repo, make sure you add `$HOME/.local/nvim-linux64/bin` to your $PATH
-
-Additionally, please install neovim and [my LazyVim configuration](https://github.com/Sheco/LazyVimStarter)
+I have my own LazyVim configuration [my LazyVim configuration](https://github.com/Sheco/LazyVimStarter), clone it to `~/.config/nvim`
 
 vim's prefix is space in command mode. (It's actually called leader in vim, but I'm using prefix here)
 
