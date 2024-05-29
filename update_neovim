@@ -1,3 +1,0 @@
-#!/bin/sh
-#curl -L https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage -o $HOME/.local/bin/nvim
-curl https://github.com/neovim/neovim/releases/download/v0.10.0/nvim-linux64.tar.gz | tar xz -C $HOME/.local/
