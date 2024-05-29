@@ -122,5 +122,7 @@ The key extension is AATWS which modifies alt-tab and makes it super usable, I c
 - In AATWS's dock mode:
 	- Hot edge action: application switcher (now we have a dock that hides in the bottom)
 	- Hot edge monitor: All
-	- Show app windows instead of direct activation: focused multi-window apps
+	- Show app windows instead of direct activation: disable
 	- Force App Switcher Stable Sequence: > [!NOTE]
+- In Mouse:
+	- App Switcher, middle click on item: Toggle Single app mode
