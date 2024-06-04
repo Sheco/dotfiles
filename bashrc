@@ -148,7 +148,7 @@ source "$OSH"/oh-my-bash.sh
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
 export GOPRIVATE=github.com/mantix4
-export EDITOR=vim
+export EDITOR=nvim
 export PATH="$HOME/.local/bin:$PATH"
 source ~/.asdf/asdf.sh
 alias vim=nvim
