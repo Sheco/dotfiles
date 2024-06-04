@@ -11,6 +11,13 @@ being locked in an old way of doing things.
 
 Unfortunately this is not always efficient and some things are lost in time, which is a shame.
 
+My stack is around using the following apps/tools:
+- kitty
+- tmux
+- neovim
+- oh my bash
+- GNOME
+
 # asdf
 
 First and foremost, I install this package manager following the instructions from [their website](https://asdf-vm.com/guide/getting-started.html)
@@ -68,6 +75,7 @@ shortcut | Description
 ---------|-----------
 \<prefix> t | New tab
 \<prefix> left, \<prefix> right | Move to the previous/next tab
+\<prefix> (comma),(period) | Reorder current tab to the left/right
 \<prefix> \<enter> | New pane
 \<prefix> ], \<prefix> [ | Prev/Next pane
 \<prefix> F2 | Edit kitty.conf
@@ -138,4 +146,7 @@ The key extension is AATWS which modifies alt-tab and makes it super usable, I c
 	- Show app windows instead of direct activation: disable
 	- Force App Switcher Stable Sequence: > [!NOTE]
 - In Mouse:
-	- App Switcher, middle click on item: Toggle Single app mode
+	- App Switcher, middle click on item: Do nothing
+	- App Switcher, scroll over item: do nothing
+	- Window switcher, scroll over item
+
