@@ -150,7 +150,6 @@ source "$OSH"/oh-my-bash.sh
 export GOPRIVATE=github.com/mantix4
 export EDITOR=nvim
 export PATH="$HOME/.local/bin:$PATH"
-source ~/.asdf/asdf.sh
 alias vim=nvim
 
 function kittyInstallTsh {
@@ -159,3 +158,4 @@ function kittyInstallTsh {
 function kittyInstallSsh {
 	infocmp -a xterm-kitty | tic -x /dev/stdin | ssh "$@" "cat > ~/.terminfo"
 }
+eval "$(/home/sduran/.local/bin/mise activate bash)"
