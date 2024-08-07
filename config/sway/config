@@ -47,10 +47,10 @@ output "eDP-1" disable
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
+ exec swayidle -w \
+          timeout 300 'swaylock -f -c 000000' \
+          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+          before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -102,7 +102,9 @@ input type:keyboard {
     bindsym $mod+Shift+e exec wlogout
 
     # Toggle internal monitor
-    bindsym $mod+m output "eDP-1" toggle
+    # swaymsg -t get_outputs
+    bindsym $mod+m output "eDP-1" toggle; output "eDP-1" dpms toggle
+
     bindsym Print exec screenshot
 
 #
@@ -257,4 +259,4 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86Search exec $menu
 
-exec swayidle
+
