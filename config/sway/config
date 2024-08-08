@@ -101,7 +101,6 @@ input type:keyboard {
     bindsym $mod+Shift+e exec wlogout
 
     # Toggle internal monitor
-    # swaymsg -t get_outputs
     bindsym $mod+m output "eDP-1" toggle
 
     bindsym Print exec screenshot
