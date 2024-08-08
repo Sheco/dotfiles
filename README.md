@@ -16,11 +16,11 @@ environment will remain the same.
 
 My stack is around using the following apps/tools:
 
-- kitty
-- tmux
-- neovim
-- oh my zsh
-- Sway
+- `kitty`
+- `tmux`
+- `neovim`
+- `oh my zsh`
+- `Sway`
 
 One particular key piece of my workflow is that
 
@@ -33,7 +33,7 @@ One particular key piece of my workflow is that
 
 ## mise
 
-First and foremost, I install this package manager following the instructions from
+First and foremost, I install this package manager, `mise`, following the instructions from
 [their website](https://mise.jdx.dev/getting-started.html)
 
 I then install the software I use:
@@ -46,7 +46,7 @@ done
 
 ## tmux
 
-Tmux is a terminal multiplexer, which means I can have multiple shell command lines in a single window/connection.
+`tmux` is a terminal multiplexer, which means I can have multiple shell command lines in a single window/connection.
 
 Install:
 ```
@@ -56,22 +56,20 @@ ln -s $(pwd)/tmux.conf ~/.tmux.conf
 Please review then
 [keyboard bindings](https://github.com/gpakosz/.tmux?tab=readme-ov-file#bindings)
 
-tmux's prefix is Control+A
-
 shortcut   | Description
 -----------|-----------
-\<prefix> ? | List all keybindings
-\<prefix> :new-session | Create new session
-\<prefix> $ | rename current session
-\<prefix> w | List windows (tmux tabs)
-\<prefix> s | List sessions
-\<prefix> d | Detach from tmux
-\<prefix> c | Create a new window (a tmux tab)
-\<prefix> , | Rename current window (tmux tab)
-\<prefix> - | Split pane vertically
-\<prefix> _ | Split pane horizontally
-shift-left, shift-right | activate left/right window
-alt-shift-left, alt-shift-right | Switch this window with the one on the left/right
+`Control+A ? | List all keybindings
+`Control+A :new-session | Create new session
+`Control+A $ | rename current session
+`Control+A w | List windows (tmux tabs)
+`Control+A s | List sessions
+`Control+A d | Detach from tmux
+`Control+A c | Create a new window (a tmux tab)
+`Control+A , | Rename current window (tmux tab)
+`Control+A - | Split pane vertically
+`Control+A _ | Split pane horizontally
+`Shift+ArrowKeys` | activate left/right window
+`Shift+Alt+ArrowKeys` | Switch this window with the one on the left/right
 
 I recommend launching tmux and having multiple sessions locally and moving through
 them in the local tmux terminal, and having new terminal tabs each for a different
