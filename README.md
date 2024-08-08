@@ -138,6 +138,11 @@ For more spell checking options check [this blog post](https://johncodes.com/pos
 
 ## Sway
 
+Sway is a tiling window manager, it's not a full desktop environment, which makes it super light and fast.
+The workflow takes some time getting used to, but once you are familiar with the keyboard shortcuts, things make
+a lot of sense, you can review the sway config file to find everything you'll need. the man pages are also 
+very well documented.
+
 Make sure you install sway and waybar
 
 
