@@ -44,9 +44,6 @@ Install:
 ln -s $(pwd)/tmux.conf ~/.tmux.conf
 ```
 
-Make sure you have a recent version of tmux, you may have to download and compile the
-latest version on your own, I used it with tmux 3.3a
-
 Please review then
 [keyboard bindings](https://github.com/gpakosz/.tmux?tab=readme-ov-file#bindings)
 
@@ -141,7 +138,14 @@ For more spell checking options check [this blog post](https://johncodes.com/pos
 
 ## Sway
 
+Sway is a tiling window manager, it's not a full desktop environment, which makes it super light and fast.
+The workflow takes some time getting used to, but once you are familiar with the keyboard shortcuts, things make
+a lot of sense, you can review the sway config file to find everything you'll need. the man pages are also 
+very well documented.
+
 Make sure you install sway, waybar, wl-clipboard and the scripts in bin to somewhere in your $PATH
+
+Make sure you install sway and waybar
 
 
 Install:
