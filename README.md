@@ -37,7 +37,7 @@ done
 
 ## tmux
 
-I am moving away from Oh My tmux and straight into just using tpm, so far so good,
+Tmux is a terminal multiplexer, which means I can have multiple shell command lines in a single window/connection.
 
 Install:
 ```
@@ -74,7 +74,7 @@ managing multiple shells and persistence.
 
 ## kitty
 
-My favorite terminal emulator, Kitty, it can be downloaded from the
+My favorite terminal emulator right now, Kitty, it can be downloaded from the
 [Kitty Website](https://sw.kovidgoyal.net/kitty/binary/)
 or you can use the [update_kitty](/update_kitty) script included in this repo.
 
