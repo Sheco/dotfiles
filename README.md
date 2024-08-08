@@ -43,6 +43,15 @@ for plugin in golang lazygit neovim nodejs rust tmux tree-sitter
 do mise use --global $plugin@latest
 done
 ```
+## Configuration files
+
+You can install all configuration directories with this:
+
+```bash
+for app in kitty nvim sway tmux waybar
+do ln -s $(pwd)/config/$app ~/.config/
+done
+
 
 ## tmux
 
