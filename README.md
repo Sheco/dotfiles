@@ -141,7 +141,7 @@ For more spell checking options check [this blog post](https://johncodes.com/pos
 
 ## Sway
 
-Make sure you install sway and waybar
+Make sure you install sway, waybar, wl-clipboard and the scripts in bin to somewhere in your $PATH
 
 
 Install:
