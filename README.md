@@ -98,12 +98,11 @@ shortcut | Description
 
 ## neovim
 
-I have my own LazyVim configuration 
-[my LazyVim configuration](https://github.com/Sheco/LazyVimStarter),
+I use LazyVim to setup my vim environment, it's easy to install and makes vim super good.
 
 Install:
 ```
-ln -s $(pwd)/config/neovim ~/.config/
+ln -s $(pwd)/config/nvim ~/.config/
 ```
 
 vim's prefix is space in command mode. (It's actually called leader in vim,
