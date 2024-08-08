@@ -58,16 +58,16 @@ Please review then
 
 shortcut   | Description
 -----------|-----------
-`Control+A ? | List all keybindings
-`Control+A :new-session | Create new session
-`Control+A $ | rename current session
-`Control+A w | List windows (tmux tabs)
-`Control+A s | List sessions
-`Control+A d | Detach from tmux
-`Control+A c | Create a new window (a tmux tab)
-`Control+A , | Rename current window (tmux tab)
-`Control+A - | Split pane vertically
-`Control+A _ | Split pane horizontally
+`Control+A ?` | List all keybindings
+`Control+A :new-session` | Create new session
+`Control+A $` | rename current session
+`Control+A w` | List windows (tmux tabs)
+`Control+A s` | List sessions
+`Control+A d` | Detach from tmux
+`Control+A c` | Create a new window (a tmux tab)
+`Control+A ,` | Rename current window (tmux tab)
+`Control+A -` | Split pane vertically
+`Control+A _` | Split pane horizontally
 `Shift+ArrowKeys` | activate left/right window
 `Shift+Alt+ArrowKeys` | Switch this window with the one on the left/right
 
