@@ -27,7 +27,7 @@ One particular key piece of my workflow is that
 - `Super+ArrowKeys` move between Sway workspaces
 - `Super+Shift+ArrowKeys` move the current Sway window around between workspaces
 - `Control+Shift+ArrowKeys` move between Kitty tabs
-- `Control+Shift+<>` move kitty tabs around 
+- `Control+Shift+[<>]` move kitty tabs around 
 - `Shift+ArrowKeys` move between tmux's tabs
 - `Shift+Alt+ArrowKeys` move tmux tabs around
 
@@ -92,13 +92,13 @@ Please review the Keyboard bindings pressing Control+Shift+F1
 Kitty's prefix is Control+Shift
 shortcut | Description
 ---------|-----------
-\<prefix> t | New tab
-\<prefix> left, \<prefix> right | Move to the previous/next tab
-\<prefix> (comma),(period) | Reorder current tab to the left/right
-\<prefix> \<enter> | New pane
-\<prefix> ], \<prefix> [ | Prev/Next pane
-\<prefix> F2 | Edit kitty.conf
-\<prefix> F5 | Reload config
+`Control+Shift+t` | New tab
+`Control+Shift+ArrowKeys` | Move to the previous/next tab
+`Control+Shift+[<>]` | Reorder current tab to the left/right
+`Control+Shift+Enter` | New pane
+`Control+Shift+[]` | Prev/Next pane
+`Control+Shift+F2` | Edit kitty.conf
+`Control+Shift+F5` | Reload config
 
 ## neovim
 
@@ -116,30 +116,30 @@ Please review the keyboard bindings at [LazyVim's keybindings page](https://www.
 
 shortcut | Description
 ---------|-----------
-\<prefix> sk | Show keymaps
-\<prefix> , | List buffers
-\<prefix> \<space> | List all files
-\<prefix> / | search in all files
-\<prefix> e | open sidebar file manager
-\<prefix> be | Buffer explorer
-\<prefix> ge | Git explorer
-\<prefix> l | Open lazy window to update plugins
-\<prefix>cm | Open mason window to update LSPs
-C-h, C-l | move to the pane on the left/right
-\<prefix> ul | disable line numbers and other visual cues (useful to copy text)
-\<prefix> cd | show diagnostics
-\<prefix> ca | show action fixes
-]d [d | next/prev diagnostic
-]e [e | next/prev error
-K | show current word's LSP documentation
-gd | Go to current word's LSP definition
-\<prefix> cr | Rename/refactor current word
-shift h, shift l | Move to the prev/next buffer
-\<prefix> bp | Pin current buffer
-\<prefix> bP | Delete unpinned buffers
-\<prefix> gsr | Replace surrounding
-z= | Open spell checking suggestions
-:setlocal spell spelllang=es_mx | to change the current spell checking dictionary
+`Space+sk` | Show keymaps
+`Space+,` | List buffers
+`Space+Space` | List all files
+`Space+/` | search in all files
+`Space+e` | open sidebar file manager
+`Space+be` | Buffer explorer
+`Space+ge` | Git explorer
+`Space+l` | Open lazy window to update plugins
+`Space+cm` | Open mason window to update LSPs
+`Control+[hl]` | move to the pane on the left/right
+`Space+ul` | disable line numbers and other visual cues (useful to copy text)
+`Space+cd` | show diagnostics
+`Space+ca` | show action fixes
+`]d [d` | next/prev diagnostic
+`]e [e` | next/prev error
+`K` | show current word's LSP documentation
+`gd` | Go to current word's LSP definition
+`Space+cr` | Rename/refactor current word
+`Shift+[hl]` | Move to the prev/next buffer
+`Space+bp` | Pin current buffer
+`Space+bP` | Delete unpinned buffers
+`Space+gsr` | Replace surrounding
+`z=` | Open spell checking suggestions
+`:setlocal spell spelllang=es_mx` | to change the current spell checking dictionary
 
 For more spell checking options check [this blog post](https://johncodes.com/posts/2023/02-25-nvim-spell/)
 
