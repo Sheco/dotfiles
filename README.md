@@ -10,40 +10,39 @@ This had some advantages, namely I was forced to stay up to date with newer
 technologies and practices instead of being locked in an old way of doing things.
 
 Unfortunately this is not always efficient and some things are lost in time,
-which is a shame.
+which is a shame. In this project, I'm managing and documenting my environment,
+so that I can reinstall linux and even try different Distributions and my
+environment will remain the same.
 
 My stack is around using the following apps/tools:
 
 - kitty
 - tmux
 - neovim
-- oh my bash
-- GNOME
+- oh my zsh
+- Sway
 
-## asdf
+## mise
 
 First and foremost, I install this package manager following the instructions from
-[their website](https://asdf-vm.com/guide/getting-started.html)
-
-- Install dependencies
-- Clone repo
-- Install helper for my shell
+[their website](https://mise.jdx.dev/getting-started.html)
 
 I then install the software I use:
 
 ```bash
 for plugin in golang lazygit neovim nodejs rust tmux tree-sitter
-do
-  asdf plugin add $plugin
-  asdf install $plugin latest
-  asdf global $plugin latest
+do mise use --global $plugin@latest
 done
 ```
 
 ## tmux
 
 I am moving away from Oh My tmux and straight into just using tpm, so far so good,
-install tmux.conf into ~/.tmux.conf
+
+Install:
+```
+ln -s $(pwd)/tmux.conf ~/.tmux.conf
+```
 
 Make sure you have a recent version of tmux, you may have to download and compile the
 latest version on your own, I used it with tmux 3.3a
@@ -79,8 +78,10 @@ My favorite terminal emulator, Kitty, it can be downloaded from the
 [Kitty Website](https://sw.kovidgoyal.net/kitty/binary/)
 or you can use the [update_kitty](/update_kitty) script included in this repo.
 
-Copy both [kitty/kitty.conf](kitty/kitty.conf) and
-[kitty/current-theme.conf](current-theme.conf) to `$HOME/.config/kitty`.
+Install:
+```
+ln -s $(pwd)/config/kitty ~/.config/
+```
 
 Please review the Keyboard bindings pressing Control+Shift+F1
 
@@ -99,7 +100,11 @@ shortcut | Description
 
 I have my own LazyVim configuration 
 [my LazyVim configuration](https://github.com/Sheco/LazyVimStarter),
-clone it to `~/.config/nvim`
+
+Install:
+```
+ln -s $(pwd)/config/neovim ~/.config/
+```
 
 vim's prefix is space in command mode. (It's actually called leader in vim,
 but I'm using prefix here)
@@ -135,35 +140,13 @@ z= | Open spell checking suggestions
 
 For more spell checking options check [this blog post](https://johncodes.com/posts/2023/02-25-nvim-spell/)
 
-## Gnome extensions
+## Sway
 
-To set up GNOME the way I like it, I install these extensions:
+Make sure you install sway and waybar
 
-- AATWS (Advanced Alt-Tab Window Switcher)
-- AppIndicator and KStatusNotifierItem Support
-- Frippery Move Clock
-- Vitals
 
-The key extension is AATWS which modifies alt-tab and makes it super usable, I
-change these settings:
+Install:
+```
+ln -s $(pwd)/config/sway $(pwd)/config/waybar ~/.config/
+```
 
-- I go to GNOME's keyboard settings and set Alt-tab to be a "Window switcher"
-and Super-tab an "Application switcher"
-- In AAWTS's common settings:
-  - Default Monitor: Monitor with focused window
-  - Super Key action: app Switcher (this makes AATWS replace the Activities Overview)
-- In AATWS's window switcher:
-  - Filter: Current monitor (I like this, this is the main reason I installed
-  this extension)
-- In AATS's application switcher:
-  - Filter: Current monitor
-  - Default Sorting: Most Recently Used
-- In AATWS's dock mode:
-  - Hot edge action: application switcher (now we have a dock that hides in the bottom)
-  - Hot edge monitor: All
-  - Show app windows instead of direct activation: disable
-  - Force App Switcher Stable Sequence: > [!NOTE]
-- In Mouse:
-  - App Switcher, middle click on item: Do nothing
-  - App Switcher, scroll over item: do nothing
-  - Window switcher, scroll over item
