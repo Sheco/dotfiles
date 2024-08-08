@@ -4,8 +4,6 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-# XDG_CURRENT_DESKTOP=sway
-# MOZ_ENABLE_WAYLAND=1
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 
@@ -229,22 +227,6 @@ bindsym $mod+r mode "resize"
 #
 # Status Bar:
 #
-# Read `man 5 sway-bar` for more information about this section.
-#bar {
-#    position top
-#
-#    # When the status_command prints a new line to stdout, swaybar updates.
-#    # The default just shows the current date and time.
-#    status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
-#
-#    colors {
-#        statusline #ffffff
-#        background #323232
-#        active_workspace #ffffff #1486c9 #ffffff
-#        focused_workspace #ffff00 #1486c9 #ffffff
-#        inactive_workspace #323232 #0e23a5 #eeeeee
-#    }
-#}
 bar swaybar_command waybar
 
 include /etc/sway/config.d/*
@@ -259,5 +241,6 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86Search exec $menu
+
 
 
