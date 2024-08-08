@@ -102,7 +102,7 @@ input type:keyboard {
 
     # Toggle internal monitor
     # swaymsg -t get_outputs
-    bindsym $mod+m output "eDP-1" toggle; output "eDP-1" dpms toggle
+    bindsym $mod+m output "eDP-1" toggle
 
     bindsym Print exec screenshot
 
