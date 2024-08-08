@@ -1,0 +1,27 @@
+
+AddKeysToAgent yes
+Host *
+        ServerAliveInterval 240
+
+# Some convenient ssh proxies I use to connect to some networks
+Host *.tcbe
+        ProxyCommand ssh taquilla@api.transcaribe.net nc $(echo %h | sed 's/\.tcbe$//') %p
+Host *.cmc
+        ProxyCommand ssh taquilla@api.mexicowaterjets.com.mx nc $(echo %h | sed 's/\.cmc$//') %p
+Host *.ferrymx
+        ProxyCommand ssh taquilla@13.85.81.197 nc $(echo %h | sed 's/\.ferrymx$//') %p
+
+Host *.aws.mantix4.com
+        ProxyCommand ssh aws.mantix4.com nc $(echo %h | sed 's/\.aws.mantix4.com$//') %p
+
+Host *.atos.mantix4.com
+        ProxyCommand ssh atos.aws.mantix4.com nc $(echo %h | sed 's/\.atos.mantix4.com$//') %p
+
+Host aws-dev.mantix4.com
+    ProxyCommand ssh -A -W %h:%p aws.mantix4.com
+    Hostname global-dev
+
+Host aws-prod.mantix4.com
+    ProxyCommand ssh -A -W %h:%p aws.mantix4.com
+    Hostname global-prod
+
