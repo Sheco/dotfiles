@@ -50,7 +50,7 @@ done
 
 Install:
 ```
-ln -s $(pwd)/tmux.conf ~/.tmux.conf
+ln -s $(pwd)/config/tmux ~/.config/
 ```
 
 Please review then
