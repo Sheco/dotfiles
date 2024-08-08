@@ -22,6 +22,14 @@ My stack is around using the following apps/tools:
 - oh my zsh
 - Sway
 
+One particular key piece of my workflow is that
+Super+ArrowKeys move between Sway workspaces
+Super+Shift+ArrowKeys move the current Sway window around between workspaces
+Control+Shift+ArrowKeys move between Kitty tabs
+Control+Shift+<> move kitty tabs around 
+Shift+ArrowKeys move between tmux's tabs
+Shift+Alt+ArrowKeys move tmux tabs around
+
 ## mise
 
 First and foremost, I install this package manager following the instructions from
