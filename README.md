@@ -44,9 +44,6 @@ Install:
 ln -s $(pwd)/tmux.conf ~/.tmux.conf
 ```
 
-Make sure you have a recent version of tmux, you may have to download and compile the
-latest version on your own, I used it with tmux 3.3a
-
 Please review then
 [keyboard bindings](https://github.com/gpakosz/.tmux?tab=readme-ov-file#bindings)
 
