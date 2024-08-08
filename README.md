@@ -51,6 +51,7 @@ You can install all configuration directories with this:
 for app in kitty nvim sway tmux waybar
 do ln -s $(pwd)/config/$app ~/.config/
 done
+```
 
 
 ## tmux
