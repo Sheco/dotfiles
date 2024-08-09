@@ -162,7 +162,7 @@ very well documented.
 
 Make sure you install sway, waybar, wl-clipboard and the scripts in bin to somewhere in your $PATH
 
-Make sure you install sway and waybar
+Make sure you install `sway waybar sway-notification-center`
 
 
 Install:

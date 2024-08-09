@@ -245,4 +245,4 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86Search exec $menu
 
 
-
+exec swaync
