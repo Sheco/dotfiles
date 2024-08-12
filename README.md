@@ -160,10 +160,7 @@ The workflow takes some time getting used to, but once you are familiar with the
 a lot of sense, you can review the sway config file to find everything you'll need. the man pages are also 
 very well documented.
 
-Make sure you install sway, waybar, wl-clipboard and the scripts in bin to somewhere in your $PATH
-
-Make sure you install `sway waybar sway-notification-center`
-
+Make sure you install `sway wl-clipboard waybar swayimg sway-notification-center workstyle`
 
 Install:
 ```

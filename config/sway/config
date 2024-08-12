@@ -246,3 +246,4 @@ bindsym XF86Search exec $menu
 
 
 exec swaync
+exec_always workstyle &> /tmp/workstyle.log
