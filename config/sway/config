@@ -153,9 +153,8 @@ input type:keyboard {
 
     # $mod+arrows move between workspaces
     # $mod+shift+arrows move the windows between workspaces
-    # $mod+left moves it to the previous workspace, if you're in the first one
-    # then it moves it to the last, I tried to make it move it to the first or not move
-    # it at all, but couldn't make that work. might have to revisit this in the future.
+    # I copied this from reddit and made a bit of a change:
+    # https://www.reddit.com/r/swaywm/comments/pe5ipl/workspace_next_or_new/
     set $next_or_new swaymsg -r -t get_workspaces | jq -r --arg OUTPUT $(swaymsg -t get_outputs -r | jq -r '.[] | select(.focused == true) | .name') '(. | (max_by(.num) | .num)) as $max | [.[] | select(.output == $OUTPUT)] | (max_by(.num) | .num) as $maxOutput | (.[] | select(.focused == true) | .num) as $current | if $maxOutput > $current then "next_on_output" else $max + 1 end'
     set $previous_or_first swaymsg -r -t get_workspaces | jq -r --arg OUTPUT $(swaymsg -t get_outputs -r | jq -r '.[] | select(.focused == true) | .name') '(. | (max_by(.num) | .num)) as $max | [.[] | select(.output == $OUTPUT)] | (min_by(.num) | .num) as $minOutput | (.[] | select(.focused == true) | .num) as $current | if $minOutput < $current then "prev_on_output" else $max + 1 end'
 
