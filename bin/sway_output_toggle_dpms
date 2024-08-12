@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+OUTPUT=$1
+# OUTPUT can be a regex, make sure to enclose it in quotes
+# `jq -e` will exit with exitcode=1 if final value is false.
+if swaymsg -t get_outputs -r | jq -e '.[] | select(.name | test("'${OUTPUT}'")) | .active' ; then {
+
+    swaymsg output ${OUTPUT} disable
+    echo "Disabled"
+} else {
+    swaymsg output ${OUTPUT} enable
+    echo "Enabled"
+}
+fi

@@ -89,6 +89,7 @@ input type:keyboard {
 
     # Start your launcher
     bindsym $mod+d exec $menu
+    bindsym $mod exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -105,6 +106,7 @@ input type:keyboard {
 
     # Toggle internal monitor
     bindsym $mod+m output "eDP-1" toggle
+    bindsym $mod+n exec ~/.local/bin/sway_output_toggle_dpms HDMI-A-1
 
     bindsym Print exec screenshot
 
