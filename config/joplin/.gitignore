@@ -1,0 +1,6 @@
+cache
+resources
+database.sqlite
+log.txt
+tmp/*
+!tmp/.prettierrc
