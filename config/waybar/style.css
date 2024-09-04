@@ -46,17 +46,17 @@ button {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
-    box-shadow: inset -3px -3px #ffffff;
+    box-shadow: inset -3px -3px #aaaaaa;
 }
 
 #workspaces button {
     padding: 0 5px;
-    background-color: transparent;
+    background-color: #333333;
     color: #ffffff;
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+    background-color: #333333;
 }
 
 #workspaces button.focused {
