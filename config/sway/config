@@ -32,10 +32,6 @@ include /etc/sway/config-vars.d/*
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 output * bg #000000 solid_color
 
-# turn off the internal monitor by default
-# when not using an external monitor, comment this line.
-output "eDP-1" disable
-
 #
 # Example configuration:
 #
@@ -107,7 +103,7 @@ input type:keyboard {
 
     # Toggle internal monitor
     bindsym $mod+m output "eDP-1" toggle
-    bindsym $mod+n exec ~/.local/bin/sway_output_toggle_dpms HDMI-A-1
+    bindsym --locked $mod+m output "eDP-1" toggle
 
     bindsym Print exec screenshot
 
@@ -248,3 +244,4 @@ bindsym XF86Search exec $menu
 
 exec swaync
 exec_always ~/.local/share/mise/installs/rust/latest/bin/workstyle &> /tmp/workstyle.log
+exec_always ~/.local/bin/sway_reload
