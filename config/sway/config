@@ -51,6 +51,9 @@ output * bg #000000 solid_color
 for_window [class=".*"] inhibit_idle fullscreen
 for_window [app_id=".*"] inhibit_idle fullscreen
 
+client.focused #0b0d91 #0b0d91 #ffffff
+client.unfocused #04053d #04053d #ffffff
+
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
