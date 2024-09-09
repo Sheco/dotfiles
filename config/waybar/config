@@ -10,17 +10,7 @@
     "modules-right": ["custom/notification", "mpd", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "battery", "battery#bat2", "clock", "tray"],
     // Modules configuration
      "sway/workspaces": {
-         "disable-scroll": true,
-         "all-outputs": true,
-         "format": "{index}: {name}",
-         "format-icons": {
-             "1": "",
-             "2": "",
-             "3": "",
-             "urgent": "",
-             "focused": "",
-             "default": ""
-         }
+         "format": "{icon}"
      },
     "keyboard-state": {
         "numlock": true,
