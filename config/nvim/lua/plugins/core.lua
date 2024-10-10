@@ -23,5 +23,10 @@ return {
 	{ "zeek/vim-zeek", enabled = true; },
 	{ "folke/flash.nvim", enabled = false },
 	{ "windwp/nvim-ts-autotag", enabled = false },
+  { "nvim-snippets",
+    opts = {
+      friendly_snippets = true,
+    }
+  },
 }
 
