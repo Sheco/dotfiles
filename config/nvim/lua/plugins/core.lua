@@ -1,4 +1,5 @@
 
+
 local configs = require("lspconfig.configs")
 local lspconfig = require("lspconfig")
 
@@ -6,10 +7,8 @@ local lspconfig = require("lspconfig")
 configs['zeek'] =  {
   default_config = {
     cmd = { "zeek-language-server"},
-    filetypes = { "zeek" }, -- Recognize .zeek files
-    root_dir = function(fname)
-      return lspconfig.util.find_git_ancestor(fname)
-    end,
+    filetypes = { "zeek" },
+    root_dir = lspconfig.util.find_git_ancestor,
     settings = {},
   }
 }
