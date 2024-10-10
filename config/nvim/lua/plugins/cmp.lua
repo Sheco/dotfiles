@@ -3,6 +3,8 @@ return {
     "hrsh7th/nvim-cmp",
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
+      table.insert(opts.sources, { name = "lazydev", group_index = 0 })
+
       local cmp = require("cmp")
 
       opts.completion = {
