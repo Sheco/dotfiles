@@ -1,7 +1,6 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
@@ -9,9 +8,9 @@
     "modules-center": ["sway/window"],
     "modules-right": ["custom/notification", "mpd", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "battery", "battery#bat2", "clock", "tray"],
     // Modules configuration
-     "sway/workspaces": {
-         "format": "{icon}"
-     },
+    // "sway/workspaces": {
+    //     "format": "{icon}"
+    // },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,

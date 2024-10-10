@@ -246,5 +246,4 @@ bindsym XF86Search exec $menu
 
 
 exec swaync
-exec_always ~/.local/share/mise/installs/rust/latest/bin/workstyle &> /tmp/workstyle.log
 exec_always ~/.local/bin/sway_reload
