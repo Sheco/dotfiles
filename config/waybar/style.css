@@ -9,6 +9,7 @@ window#waybar {
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
+    padding: 0 0;
 }
 
 window#waybar.hidden {
@@ -33,13 +34,8 @@ window#waybar.chromium {
     border: none;
 }
 
-button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
-    border: none;
-    border-radius: 0; 
-    margin-right: 2px;
+#window {
+  padding: 0px 5px;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -48,9 +44,11 @@ button:hover {
 }
 
 #workspaces button {
-    padding: 0 5px;
+    padding: 0px 0px;
+    margin: 0px 0px;
     background-color: #333333;
     color: #dddddd;
+    border-radius: 0px;
 }
 
 #workspaces button:hover {
@@ -88,14 +86,8 @@ button:hover {
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-    padding: 0 10px;
+    padding: 0 5px;
     color: #ffffff;
-    border-radius: 15px;
-}
-
-#window,
-#workspaces {
-    margin: 0 4px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -264,7 +256,6 @@ label:focus {
     color: #ffffff;
     padding: 0 5px;
     min-width: 16px;
-    border-radius: 15px;
 }
 
 #keyboard-state {
