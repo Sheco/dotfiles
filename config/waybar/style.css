@@ -152,7 +152,7 @@ label:focus {
 }
 
 #cpu {
-    color: #2ecc71;
+    color: #9b59b6;
 }
 
 #memory {
@@ -190,6 +190,10 @@ label:focus {
 
 #wireplumber.muted {
     background-color: #f53c3c;
+}
+
+#custom-notification {
+  padding-bottom: 5px;
 }
 
 #custom-media {
