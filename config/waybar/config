@@ -83,7 +83,7 @@
     },
     "cpu": {
         "rotate": 90,
-        "format": "{usage}% ",
+        "format": "{usage}% {avg_frequency}Ghz ",
         "tooltip": true,
         "on-click-right": "kitty btop",
     },
