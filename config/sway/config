@@ -50,6 +50,9 @@ output * bg #000000 solid_color
 
 for_window [class=".*"] inhibit_idle fullscreen
 for_window [app_id=".*"] inhibit_idle fullscreen
+for_window [app_id="org.keepassxc.KeePassXC"] floating enable
+for_window [app_id="org.gnome.*"] floating enable
+for_window [app_id="eog"] floating enable
 
 client.focused #0b0d91 #0b0d91 #ffffff
 client.unfocused #04053d #04053d #ffffff
