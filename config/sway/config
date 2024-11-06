@@ -162,11 +162,11 @@ input type:keyboard {
     set $next_or_new swaymsg -r -t get_workspaces | jq -r --arg OUTPUT $(swaymsg -t get_outputs -r | jq -r '.[] | select(.focused == true) | .name') '(. | (max_by(.num) | .num)) as $max | [.[] | select(.output == $OUTPUT)] | (max_by(.num) | .num) as $maxOutput | (.[] | select(.focused == true) | .num) as $current | if $maxOutput > $current then "next_on_output" else $max + 1 end'
     set $previous_or_first swaymsg -r -t get_workspaces | jq -r --arg OUTPUT $(swaymsg -t get_outputs -r | jq -r '.[] | select(.focused == true) | .name') '(. | (max_by(.num) | .num)) as $max | [.[] | select(.output == $OUTPUT)] | (min_by(.num) | .num) as $minOutput | (.[] | select(.focused == true) | .num) as $current | if $minOutput < $current then "prev_on_output" else $max + 1 end'
 
-    bindsym $mod+Right exec swaymsg "workspace $($next_or_new)"
-    bindsym $mod+Left exec swaymsg "workspace $($previous_or_first)"
+    bindsym $mod+Down exec swaymsg "workspace $($next_or_new)"
+    bindsym $mod+Up exec swaymsg "workspace $($previous_or_first)"
 
-    bindsym $mod+Shift+Right exec swaymsg "move container to workspace $($next_or_new), workspace next_on_output"
-    bindsym $mod+Shift+Left exec swaymsg "move container to workspace $($previous_or_first), workspace prev_on_output"
+    bindsym $mod+Shift+Down exec swaymsg "move container to workspace $($next_or_new), workspace next_on_output"
+    bindsym $mod+Shift+Up exec swaymsg "move container to workspace $($previous_or_first), workspace prev_on_output"
 #
 # Layout stuff:
 #
