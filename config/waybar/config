@@ -83,13 +83,13 @@
     },
     "cpu": {
         "rotate": 90,
-        "format": "{usage}% {avg_frequency}Ghz ",
+        "format": "{usage}% CPU@{avg_frequency}Ghz",
         "tooltip": true,
         "on-click-right": "kitty btop",
     },
     "memory": {
         "rotate": 90,
-        "format": "{}% "
+        "format": "{}% RAM"
     },
     "temperature": {
         "rotate": 90,
