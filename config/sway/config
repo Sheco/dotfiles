@@ -22,7 +22,7 @@ set $term /home/sduran/.local/bin/kitty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu rofi -show run
+set $menu wofi --show run
 
 include /etc/sway/config-vars.d/*
 
