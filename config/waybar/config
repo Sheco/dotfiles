@@ -89,7 +89,7 @@
     },
     "memory": {
         "rotate": 90,
-        "format": "{}% RAM"
+        "format": "{percentage}% RAM {swapPercentage}% swap"
     },
     "temperature": {
         "rotate": 90,
