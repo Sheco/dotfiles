@@ -102,6 +102,7 @@
     },
     "backlight": {
         // "device": "acpi_video1",
+        "rotate": 90,
         "format": "{percent}% {icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
