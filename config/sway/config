@@ -56,6 +56,8 @@ for_window [app_id="eog"] floating enable
 
 client.focused #0b0d91 #0b0d91 #ffffff
 client.unfocused #04053d #04053d #ffffff
+default_border normal 4
+default_floating_border normal 4
 
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
