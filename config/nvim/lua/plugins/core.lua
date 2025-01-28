@@ -4,7 +4,7 @@ require('lspconfig.configs').zeek =  {
     cmd = { "zeek-language-server"},
     filetypes = { "zeek" },
     root_dir = function(fname)
-      return vim.fs.dirname(vim.fs.find({ '.asm-lsp.toml', '.git' }, { path = fname, upward = true })[1])
+      return vim.fs.dirname(vim.fs.find({ '.git' }, { path = fname, upward = true })[1])
     end,
     settings = {},
   }
