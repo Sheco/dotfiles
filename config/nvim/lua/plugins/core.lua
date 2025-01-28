@@ -1,18 +1,15 @@
-
-
-local configs = require("lspconfig.configs")
-local lspconfig = require("lspconfig")
-
 -- Add Zeek LSP configuration
-configs['zeek'] =  {
+require('lspconfig.configs').zeek =  {
   default_config = {
     cmd = { "zeek-language-server"},
     filetypes = { "zeek" },
-    root_dir = lspconfig.util.find_git_ancestor,
+    root_dir = function(fname)
+      return vim.fs.dirname(vim.fs.find({ '.asm-lsp.toml', '.git' }, { path = fname, upward = true })[1])
+    end,
     settings = {},
   }
 }
-lspconfig.zeek.setup{}
+require('lspconfig').zeek.setup{}
 
 return {
   { "echasnovski/mini.indentscope", enabled = false, },
