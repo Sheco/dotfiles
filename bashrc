@@ -149,7 +149,6 @@ source "$OSH"/oh-my-bash.sh
 # alias ohmybash="mate ~/.oh-my-bash"
 export GOPRIVATE=github.com/mantix4
 export EDITOR=nvim
-export PATH="$HOME/.local/bin:$HOME/.local/share/aquaproj-aqua/bin:$PATH"
 alias vim=nvim
 
 function kittyInstallTsh {
@@ -158,3 +157,4 @@ function kittyInstallTsh {
 function kittyInstallSsh {
 	infocmp -a xterm-kitty | tic -x /dev/stdin | ssh "$@" "cat > ~/.terminfo"
 }
+eval "$(~/.local/bin/mise activate bash)"
