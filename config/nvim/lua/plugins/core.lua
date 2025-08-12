@@ -1,23 +1,26 @@
 -- Add Zeek LSP configuration
--- require('lspconfig.configs').zeek =  {
---   default_config = {
---     cmd = { "zeek-language-server"},
---     filetypes = { "zeek" },
---     root_dir = function(fname)
---       return vim.fs.dirname(vim.fs.find({ '.git' }, { path = fname, upward = true })[1])
---     end,
---     settings = {},
---   }
--- }
--- require('lspconfig').zeek.setup{}
-vim.lsp.config['zeek'] = {
+-- for vim 0.10
+require('lspconfig.configs').zeek =  {
+  default_config = {
     cmd = { "zeek-language-server"},
     filetypes = { "zeek" },
-    root_markers = { '.git' },
+    root_dir = function(fname)
+      return vim.fs.dirname(vim.fs.find({ '.git' }, { path = fname, upward = true })[1])
+    end,
     settings = {},
-
+  }
 }
-vim.lsp.enable('zeek')
+require('lspconfig').zeek.setup{}
+
+-- for vim 0.11
+-- vim.lsp.config['zeek'] = {
+--     cmd = { "zeek-language-server"},
+--     filetypes = { "zeek" },
+--     root_markers = { '.git' },
+--     settings = {},
+--
+-- }
+-- vim.lsp.enable('zeek')
 
 return {
   { "echasnovski/mini.indentscope", enabled = false, },
