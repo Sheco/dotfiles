@@ -151,10 +151,17 @@ export GOPRIVATE=github.com/mantix4
 export EDITOR=nvim
 alias vim=nvim
 
-function kittyInstallTsh {
-	infocmp -a xterm-kitty | tsh ssh "$@" tic -x -o \~/.terminfo /dev/stdin
-}
-function kittyInstallSsh {
-	infocmp -a xterm-kitty | tic -x /dev/stdin | ssh "$@" "cat > ~/.terminfo"
+function kittyInstall {
+	if [[ -z "$@" ]]
+	then
+		cat <<EOF>&2
+Usage: kittyInstall {ssh host}
+Example: kittyInstall ssh sduran@thinkpad.lan
+         kittyInstall tsh ssh root@m4sensor
+
+EOF
+	return
+	fi
+	infocmp -a xterm-kitty | tic -x /dev/stdin | $@ "cat > ~/.terminfo"
 }
 eval "$(~/.local/bin/mise activate bash)"

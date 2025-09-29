@@ -167,3 +167,13 @@ Install:
 ln -s $(pwd)/config/sway $(pwd)/config/waybar ~/.config/
 ```
 
+## Steam Deck
+
+Enable ssh-agent systemd service
+
+```bash
+systemctl --user enable --now ssh-agent.service
+```
+
+To install teleport, go to https://goteleport.com/download/ and download the Linux 64-bit package, extract it
+to ~/.local/teleport and add that to the path
