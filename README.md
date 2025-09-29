@@ -19,17 +19,15 @@ My stack is around using the following apps/tools:
 - `kitty`
 - `tmux`
 - `neovim`
-- `oh my zsh`
-- `Sway`
 
 One particular key piece of my workflow is that
 
-- `Super+ArrowKeys` move between Sway workspaces
-- `Super+Shift+ArrowKeys` move the current Sway window around between workspaces
 - `Control+Shift+ArrowKeys` move between Kitty tabs
 - `Control+Shift+[<>]` move kitty tabs around 
-- `Shift+ArrowKeys` move between tmux's tabs
-- `Shift+Alt+ArrowKeys` move tmux tabs around
+- `Control+ArrowKeys` move between tmux's tabs
+- `Control+Alt+ArrowKeys` move tmux tabs around
+- `Control+Win+ArrowKeys` move between KDE virtual desktops
+- `Control+Win+Shift+ArrowKeys` move current window between virtual desktops
 
 ## mise
 
@@ -48,7 +46,7 @@ done
 You can install all configuration directories with this:
 
 ```bash
-for app in kitty nvim sway tmux waybar
+for app in kitty nvim environment.d git yazi
 do ln -s $(pwd)/config/$app ~/.config/
 done
 ```
@@ -112,7 +110,7 @@ shortcut | Description
 
 ## neovim
 
-I use LazyVim to setup my vim environment, it's easy to install and makes vim super good.
+I use KickStart.nvim to setup my vim environment, it's easy to install and makes vim super good.
 
 Install:
 ```
@@ -122,50 +120,7 @@ ln -s $(pwd)/config/nvim ~/.config/
 vim's prefix is space in command mode. (It's actually called leader in vim,
 but I'm using prefix here)
 
-Please review the keyboard bindings at [LazyVim's keybindings page](https://www.lazyvim.org/keymaps)
-
-shortcut | Description
----------|-----------
-`Space+sk` | Show keymaps
-`Space+,` | List buffers
-`Space+Space` | List all files
-`Space+/` | search in all files
-`Space+e` | open sidebar file manager
-`Space+be` | Buffer explorer
-`Space+ge` | Git explorer
-`Space+l` | Open lazy window to update plugins
-`Space+cm` | Open mason window to update LSPs
-`Control+[hl]` | move to the pane on the left/right
-`Space+ul` | disable line numbers and other visual cues (useful to copy text)
-`Space+cd` | show diagnostics
-`Space+ca` | show action fixes
-`]d [d` | next/prev diagnostic
-`]e [e` | next/prev error
-`K` | show current word's LSP documentation
-`gd` | Go to current word's LSP definition
-`Space+cr` | Rename/refactor current word
-`Shift+[hl]` | Move to the prev/next buffer
-`Space+bp` | Pin current buffer
-`Space+bP` | Delete unpinned buffers
-`Space+gsr` | Replace surrounding
-`z=` | Open spell checking suggestions
-`:setlocal spell spelllang=es_mx` | to change the current spell checking dictionary
-
 For more spell checking options check [this blog post](https://johncodes.com/posts/2023/02-25-nvim-spell/)
-
-## Sway
-
-Sway is a tiling window manager, it's not a full desktop environment, which makes it super light and fast.
-The workflow takes some time getting used to, but once you are familiar with the keyboard shortcuts, things make
-a lot of sense, you can review the sway config file to find everything you'll need. the man pages are also 
-very well documented.
-
-Make sure you install `sway wl-clipboard waybar swayimg sway-notification-center workstyle`
-
-Install:
-```
-ln -s $(pwd)/config/sway $(pwd)/config/waybar ~/.config/
-```
 
 ## Steam Deck
 
