@@ -138,3 +138,11 @@ cp config/kitty/terminfo ~/.terminfo
 
 To install teleport, go to https://goteleport.com/download/ and download the Linux 64-bit package, extract it
 to ~/.local/teleport and add that to the path
+
+### Reset audio if having HDMI out issues
+
+```bash
+systemctl --user stop wireplumber.service
+rm -r ~/.local/state/wireplumber # deletes settings
+systemctl --user start wireplumber.service
+```
