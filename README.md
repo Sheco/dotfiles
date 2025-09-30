@@ -130,5 +130,11 @@ Enable ssh-agent systemd service
 systemctl --user enable --now ssh-agent.service
 ```
 
+Install the kitty terminfo
+
+```bash
+cp config/kitty/terminfo ~/.terminfo
+```
+
 To install teleport, go to https://goteleport.com/download/ and download the Linux 64-bit package, extract it
 to ~/.local/teleport and add that to the path
