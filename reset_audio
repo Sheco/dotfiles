@@ -1,0 +1,5 @@
+#!/bin/bash
+
+systemctl --user stop wireplumber.service
+rm -r ~/.local/state/wireplumber # deletes settings
+systemctl --user start wireplumber.service
