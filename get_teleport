@@ -1,0 +1,7 @@
+#!/bin/bash
+TELEPORT_DOMAIN=tp.mantix4.com:443
+TELEPORT_VERSION="$(curl https://$TELEPORT_DOMAIN/v1/webapi/ping | jq -r '.server_version')"
+
+wget -O /tmp/teleport.tgz https://cdn.teleport.dev/teleport-v$TELEPORT_VERSION-linux-amd64-bin.tar.gz
+tar -C ~/.local -xz /tmp/teleport.tgz
+rm -f /tmp/teleport.tgz
