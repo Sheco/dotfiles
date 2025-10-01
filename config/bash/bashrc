@@ -2,6 +2,7 @@
 export GOPRIVATE=github.com/mantix4
 export EDITOR=nvim
 alias vim=nvim
+export PATH=$PATH:~/.local/teleport
 
 function kittyInstall {
 	if [[ -z "$@" ]]
@@ -17,3 +18,9 @@ EOF
 	infocmp -a xterm-kitty | tic -x /dev/stdin | $@ "cat > ~/.terminfo"
 }
 eval "$(~/.local/bin/mise activate bash)"
+
+function fix_ssh_auth
+{
+  eval "export $(tmux show-env | grep ^SSH_AUTH_SOCK=)"
+}
+
