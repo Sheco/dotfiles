@@ -1,0 +1,15 @@
+[Desktop Entry]
+Categories=System;TerminalEmulator;
+Comment=Fast, feature-rich GPU based terminal
+Exec=~/.local/kitty.app/bin/kitty
+Icon=kitty
+Name=Kitty
+NoDisplay=false
+Path=
+StartupNotify=true
+StartupWMClass=kitty
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

@@ -1,2 +1,8 @@
 #!/bin/sh
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+
+mkdir -p ~/.local/share/icons/hicolor/scalable/apps/
+wget -P ~/.local/share/icons/hicolor/scalable/apps/ https://sw.kovidgoyal.net/kitty/_static/kitty.svg
+
+mkdir -p ~/.local/share/applications
+cp kitty.desktop ~/.local/share/applications/
