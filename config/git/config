@@ -1,0 +1,12 @@
+[user]
+	email = sergio@tiene.info
+	name = Sergio Durán
+[url "ssh://git@github.com/mantix4/"]
+        insteadOf = https://github.com/mantix4/
+[url "git@github.com:Sheco"]
+    insteadOf = https://github.com/Sheco
+[init]
+        defaultBranch = main
+[pull]
+        rebase = false
+
