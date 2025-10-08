@@ -6,5 +6,5 @@
 	"markdown.plugin.softbreaks": false,
 	"markdown.plugin.typographer": false,
 	"editor": "nvim",
-	"api.token": ""
+	"api.token": "023b14d96764c641efc501cf12f277d5c845ea821b7f304899bf54b7048819775f3cd8eee6f4db1e749fd64d67594556a308dcc7f6a3d7c8b732816936497bce"
 }
