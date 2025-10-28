@@ -7,7 +7,7 @@ export PATH=$PATH:~/.local/teleport
 function kittyInstallTermcap {
 	if [[ -z "$@" ]]
 	then
-		cat <<EOF>&2
+		cat <<EOF >&2
 Usage: kittyInstall {ssh host}
 Example: kittyInstall ssh sduran@thinkpad.lan
          kittyInstall tsh ssh root@m4sensor
