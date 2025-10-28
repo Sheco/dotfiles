@@ -19,8 +19,8 @@ EOF
 }
 eval "$(~/.local/bin/mise activate bash)"
 
-function fix_ssh_auth
+function tmux_fix_env
 {
-  eval "export $(tmux show-env | grep ^SSH_AUTH_SOCK=)"
+  eval "export $(tmux show-env | grep '^\(SSH_AUTH_SOCK\|DISPLAY\)=')"
 }
 
