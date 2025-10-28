@@ -4,7 +4,7 @@ export EDITOR=nvim
 alias vim=nvim
 export PATH=$PATH:~/.local/teleport
 
-function kittyInstall {
+function kittyInstallTermcap {
 	if [[ -z "$@" ]]
 	then
 		cat <<EOF>&2
@@ -15,7 +15,7 @@ Example: kittyInstall ssh sduran@thinkpad.lan
 EOF
 	return
 	fi
-	infocmp -a xterm-kitty | tic -x /dev/stdin | $@ "cat > ~/.terminfo"
+	infocmp -a xterm-kitty | tic -x /dev/stdin | $@ "mkdir -p ~/.terminfo/x && cat > ~/.terminfo/x/xterm-kitty"
 }
 eval "$(~/.local/bin/mise activate bash)"
 
