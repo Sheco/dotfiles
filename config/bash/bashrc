@@ -15,7 +15,7 @@ Example: kittyInstall ssh sduran@thinkpad.lan
 EOF
 	return
 	fi
-	infocmp -a xterm-kitty | tic -x /dev/stdin | $@ "mkdir -p ~/.terminfo/x && cat > ~/.terminfo/x/xterm-kitty"
+	cat ~/.config/kitty/terminfo/x/xterm-kitty | $@ "mkdir -p ~/.terminfo/x && cat > ~/.terminfo/x/xterm-kitty"
 }
 eval "$(~/.local/bin/mise activate bash)"
 
