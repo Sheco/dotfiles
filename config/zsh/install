@@ -1,0 +1,9 @@
+#!/bin/bash
+
+SCRIPT_PATH=$(dirname $0)
+ABS_PATH=$(realpath $SCRIPT_PATH)
+
+rm -f ~/.zshrc ~/.oh-my-zsh/custom/personal.zsh
+
+ln -s $ABS_PATH/zshrc ~/.zshrc
+ln -sf $ABS_PATH/custom/personal.zsh ~/.oh-my-zsh/custom
