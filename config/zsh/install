@@ -3,6 +3,8 @@
 SCRIPT_PATH=$(dirname $0)
 ABS_PATH=$(realpath $SCRIPT_PATH)
 
+[[ -d ~/.oh-my-zsh ]] || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 rm -f ~/.zshrc ~/.oh-my-zsh/custom/personal.zsh
 
 ln -s $ABS_PATH/zshrc ~/.zshrc
