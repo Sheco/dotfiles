@@ -233,6 +233,8 @@ local lsp_servers = {
     -- https://luals.github.io/wiki/settings/ | `:h nvim_get_runtime_file`
     Lua = { workspace = { library = vim.api.nvim_get_runtime_file("lua", true) }, },
   },
+  bashls = {},
+  ts_ls = {},
 }
 
 vim.pack.add({
@@ -326,7 +328,8 @@ vim.pack.add({
 require("nvim-autopairs").setup()
 require("todo-comments").setup()
 
-vim.pack.add({ 
+-- extra plugins
+vim.pack.add({
   'https://github.com/folke/persistence.nvim',
   'https://github.com/nvim-neo-tree/neo-tree.nvim',
   'https://github.com/MunifTanjim/nui.nvim',
