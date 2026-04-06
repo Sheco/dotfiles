@@ -330,7 +330,8 @@ vim.pack.add({
   'https://github.com/folke/persistence.nvim',
   'https://github.com/nvim-neo-tree/neo-tree.nvim',
   'https://github.com/MunifTanjim/nui.nvim',
-  'https://github.com/lewis6991/gitsigns.nvim'
+  'https://github.com/lewis6991/gitsigns.nvim',
+  'https://github.com/zeek/vim-zeek'
 }, { confirm = false })
 require('persistence').setup()
 
@@ -358,6 +359,8 @@ vim.keymap.set(
 )
 vim.keymap.set('n', '<leader>ql', ':Telescope diagnostics<CR>', { desc = '[L]ist diagnostics messages' })
 vim.keymap.set('n', '<leader>qv', function() vim.diagnostic.open_float() end, { desc = '[V]iew current line diagnostic' })
+
+vim.lsp.enable { 'zeek' }
 
 -- uncomment to enable automatic plugin updates
 -- vim.pack.update()
