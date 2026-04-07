@@ -1,0 +1,8 @@
+#!/bin/bash
+# ~/.local/bin/zigcc
+args=""
+for arg in "$@"; do
+    arg=$(echo "$arg" | sed 's/-unknown-/-/g')
+    args="$args $arg"
+done
+exec zig cc $args
