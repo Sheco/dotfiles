@@ -167,7 +167,7 @@ vim.cmd.colorscheme("tokyonight-night")
 vim.pack.add({ "https://github.com/nvim-treesitter/nvim-treesitter" }, { confirm = false })
 
 -- equivalent to :TSUpdate
-require("nvim-treesitter.install").update("all")
+require("nvim-treesitter.install").update()
 
 require("nvim-treesitter").setup({
   sync_install = true,
