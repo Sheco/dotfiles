@@ -1,0 +1,12 @@
+[tools]
+fastfetch = "latest"
+go = "latest"
+lazygit = "latest"
+neovim = "latest"
+node = "latest"
+rclone = "latest"
+teleport-community = "latest"
+tree-sitter = "latest"
+yazi = "latest"
+yt-dlp = "latest"
+zig = "latest"
