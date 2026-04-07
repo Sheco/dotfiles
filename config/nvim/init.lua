@@ -138,7 +138,17 @@ vim.diagnostic.config({
       [vim.diagnostic.severity.HINT] = " ",
     },
   },
-  virtual_text = true, -- show inline diagnostics
+  virtual_text = false, -- disable inline spam
+  underline = true,
+})
+
+vim.api.nvim_create_autocmd("CursorHold", {
+  callback = function()
+    vim.diagnostic.open_float(nil, {
+      focus = false,
+      scope = "line",
+    })
+  end,
 })
 
 -- clear search highlights with <Esc>
@@ -376,18 +386,5 @@ vim.keymap.set('n', '<leader>qv',
 
 vim.lsp.enable { 'zeek' }
 
-vim.diagnostic.config({
-  virtual_text = false, -- disable inline spam
-  signs = true,
-  underline = true,
-})
-vim.api.nvim_create_autocmd("CursorHold", {
-  callback = function()
-    vim.diagnostic.open_float(nil, {
-      focus = false,
-      scope = "line",
-    })
-  end,
-})
 -- uncomment to enable automatic plugin updates
 -- vim.pack.update()
