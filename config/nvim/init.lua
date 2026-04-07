@@ -174,7 +174,7 @@ vim.pack.add({ "https://github.com/folke/tokyonight.nvim"} )
 vim.cmd.colorscheme("tokyonight-night")
 
 -- INFO: formatting and syntax highlighting
-vim.pack.add({ "https://github.com/nvim-treesitter/nvim-treesitter" }, { confirm = false })
+vim.pack.add({ "https://github.com/nvim-treesitter/nvim-treesitter" })
 
 -- equivalent to :TSUpdate
 require("nvim-treesitter.install").update()
@@ -202,7 +202,7 @@ require("nvim-treesitter").setup({
 })
 
 -- INFO: completion engine
-vim.pack.add({ "https://github.com/saghen/blink.cmp" }, { confirm = false })
+vim.pack.add({ "https://github.com/saghen/blink.cmp" })
 
 require("blink.cmp").setup({
   completion = {
@@ -258,7 +258,7 @@ vim.pack.add({
   "https://github.com/mason-org/mason.nvim",                     -- package manager
   "https://github.com/mason-org/mason-lspconfig.nvim",           -- lspconfig bridge
   "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" -- auto installer
-}, { confirm = false })
+})
 
 require("mason").setup()
 require("mason-lspconfig").setup()
@@ -293,7 +293,7 @@ vim.pack.add({
   "https://github.com/nvim-lua/plenary.nvim",        -- library dependency
   "https://github.com/nvim-tree/nvim-web-devicons",  -- icons (nerd font)
   "https://github.com/nvim-telescope/telescope.nvim" -- the fuzzy finder
-}, { confirm = false })
+})
 
 require("telescope").setup({})
 
@@ -310,7 +310,7 @@ vim.keymap.set("n", "<leader>sh", pickers.help_tags, { desc = "[S]earch [H]elp",
 vim.keymap.set("n", "<leader>sm", pickers.man_pages, { desc = "[S]earch [M]anuals", })
 
 -- INFO: better statusline
-vim.pack.add({ "https://github.com/nvim-lualine/lualine.nvim" }, { confirm = false })
+vim.pack.add({ "https://github.com/nvim-lualine/lualine.nvim" })
 
 require("lualine").setup({
   options = {
@@ -320,7 +320,7 @@ require("lualine").setup({
 })
 
 -- INFO: keybinding helper
-vim.pack.add({ "https://github.com/folke/which-key.nvim" }, { confirm = false })
+vim.pack.add({ "https://github.com/folke/which-key.nvim" })
 
 require("which-key").setup({
   spec = {
@@ -334,7 +334,7 @@ require("which-key").setup({
 -- INFO: utility plugins
 vim.pack.add({
   "https://github.com/folke/todo-comments.nvim" -- highlight TODO/INFO/WARN comments
-}, { confirm = false })
+})
 
 require("todo-comments").setup()
 
@@ -345,7 +345,7 @@ vim.pack.add({
   'https://github.com/MunifTanjim/nui.nvim',
   'https://github.com/lewis6991/gitsigns.nvim',
   'https://github.com/zeek/vim-zeek'
-}, { confirm = false })
+})
 require('persistence').setup()
 
 vim.keymap.set("n", "<leader>l", function()
