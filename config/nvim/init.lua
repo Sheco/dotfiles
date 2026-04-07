@@ -356,14 +356,25 @@ require('neo-tree').setup({
   }
 })
 
-vim.keymap.set(
-  'n',
-  '<leader><leader>',
-  function() require('telescope.builtin').buffers { sort_mru = true, ignore_current_buffer = false } end,
+vim.keymap.set('n', '<leader><leader>',
+  function()
+    require('telescope.builtin').buffers({
+      sort_mru = true,
+      ignore_current_buffer = false
+    })
+  end,
   { desc = 'Show buffers' }
 )
-vim.keymap.set('n', '<leader>ql', ':Telescope diagnostics<CR>', { desc = '[L]ist diagnostics messages' })
-vim.keymap.set('n', '<leader>qv', function() vim.diagnostic.open_float() end, { desc = '[V]iew current line diagnostic' })
+
+vim.keymap.set('n', '<leader>ql',
+  ':Telescope diagnostics<CR>',
+  { desc = '[L]ist diagnostics messages' })
+
+vim.keymap.set('n', '<leader>qv',
+  function()
+    vim.diagnostic.open_float()
+  end,
+  { desc = '[V]iew current line diagnostic' })
 
 vim.lsp.enable { 'zeek' }
 
