@@ -122,6 +122,7 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.textwidth = 80
+vim.opt.colorcolumn =  "+1"
 
 vim.o.completeopt = 'menuone,noselect,popup,fuzzy'
 
