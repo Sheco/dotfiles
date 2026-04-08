@@ -322,15 +322,10 @@ vim.keymap.set('n', '<leader><leader>',
   { desc = 'Show buffers' }
 )
 
-vim.keymap.set('n', '<leader>ql',
+vim.keymap.set('n', 'grl',
   ':Telescope diagnostics<CR>',
   { desc = '[L]ist diagnostics messages' })
 
-vim.keymap.set('n', '<leader>qv',
-  function()
-    vim.diagnostic.open_float()
-  end,
-  { desc = '[V]iew current line diagnostic' })
 -- INFO: better statusline
 require("lualine").setup({
   options = {
@@ -360,7 +355,7 @@ vim.keymap.set("n", "<leader>l", function()
   require('persistence').start()
   require('persistence').load()
 end, { desc = "[L]oad session", })
-
+;
 -- INFO: file manager
 vim.keymap.set("n", "-", "<cmd>Neotree filesystem reveal position=current<cr>")
 require('neo-tree').setup({
