@@ -169,12 +169,31 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- these setup calls take a table as an agument and their expected contents can
 -- vary wildly. refer to each plugin's documentation for details.
 
+vim.pack.add({
+  "https://github.com/folke/tokyonight.nvim",
+  "https://github.com/nvim-lua/plenary.nvim",        -- library dependency
+  "https://github.com/nvim-tree/nvim-web-devicons",  -- icons (nerd font)
+  "https://github.com/nvim-telescope/telescope.nvim", -- the fuzzy finder
+  "https://github.com/nvim-treesitter/nvim-treesitter",
+  "https://github.com/saghen/blink.cmp",
+  "https://github.com/neovim/nvim-lspconfig", -- default configs for lsps
+  "https://github.com/mason-org/mason.nvim",                     -- package manager
+  "https://github.com/mason-org/mason-lspconfig.nvim",           -- lspconfig bridge
+  "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim", -- auto installer
+  "https://github.com/nvim-lualine/lualine.nvim",
+  "https://github.com/folke/which-key.nvim",
+  "https://github.com/folke/todo-comments.nvim", -- highlight TODO/INFO/WARN comments
+  'https://github.com/folke/persistence.nvim',
+  'https://github.com/nvim-neo-tree/neo-tree.nvim',
+  'https://github.com/MunifTanjim/nui.nvim',
+  'https://github.com/lewis6991/gitsigns.nvim',
+  'https://github.com/zeek/vim-zeek'
+} )
+
 -- INFO: colorscheme
-vim.pack.add({ "https://github.com/folke/tokyonight.nvim"} )
 vim.cmd.colorscheme("tokyonight-night")
 
 -- INFO: formatting and syntax highlighting
-vim.pack.add({ "https://github.com/nvim-treesitter/nvim-treesitter" })
 
 -- equivalent to :TSUpdate
 require("nvim-treesitter.install").update()
@@ -202,7 +221,6 @@ require("nvim-treesitter").setup({
 })
 
 -- INFO: completion engine
-vim.pack.add({ "https://github.com/saghen/blink.cmp" })
 
 require("blink.cmp").setup({
   completion = {
@@ -248,17 +266,7 @@ local lsp_servers = {
   bashls = {},
   ts_ls = {},
 }
-
-vim.pack.add({
-  "https://github.com/neovim/nvim-lspconfig", -- default configs for lsps
-
-  -- NOTE: if you'd rather install the lsps through your OS package manager you
-  -- can delete the next three mason-related lines and their setup calls below.
-  -- see `:h lsp-quickstart` for more details.
-  "https://github.com/mason-org/mason.nvim",                     -- package manager
-  "https://github.com/mason-org/mason-lspconfig.nvim",           -- lspconfig bridge
-  "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" -- auto installer
-})
+vim.lsp.enable { 'zeek' }
 
 require("mason").setup()
 require("mason-lspconfig").setup()
@@ -289,11 +297,6 @@ end
 -- can be removed.
 
 -- INFO: fuzzy finder
-vim.pack.add({
-  "https://github.com/nvim-lua/plenary.nvim",        -- library dependency
-  "https://github.com/nvim-tree/nvim-web-devicons",  -- icons (nerd font)
-  "https://github.com/nvim-telescope/telescope.nvim" -- the fuzzy finder
-})
 
 require("telescope").setup({})
 
@@ -308,61 +311,6 @@ vim.keymap.set("n", "<leader>sr", pickers.resume, { desc = "[S]earch [R]esume", 
 
 vim.keymap.set("n", "<leader>sh", pickers.help_tags, { desc = "[S]earch [H]elp", })
 vim.keymap.set("n", "<leader>sm", pickers.man_pages, { desc = "[S]earch [M]anuals", })
-
--- INFO: better statusline
-vim.pack.add({ "https://github.com/nvim-lualine/lualine.nvim" })
-
-require("lualine").setup({
-  options = {
-    section_separators = { left = "", right = "", },
-    component_separators = { left = "", right = "", },
-  },
-})
-
--- INFO: keybinding helper
-vim.pack.add({ "https://github.com/folke/which-key.nvim" })
-
-require("which-key").setup({
-  spec = {
-    { "<leader>s", group = "[S]earch", icon = { icon = "", color = "green", }, },
-  }
-})
-
--- NOTE: there are many more quality-of-life plugins available and others that
--- achieve what these do. these are just our recommendations to start.
-
--- INFO: utility plugins
-vim.pack.add({
-  "https://github.com/folke/todo-comments.nvim" -- highlight TODO/INFO/WARN comments
-})
-
-require("todo-comments").setup()
-
--- extra plugins
-vim.pack.add({
-  'https://github.com/folke/persistence.nvim',
-  'https://github.com/nvim-neo-tree/neo-tree.nvim',
-  'https://github.com/MunifTanjim/nui.nvim',
-  'https://github.com/lewis6991/gitsigns.nvim',
-  'https://github.com/zeek/vim-zeek'
-})
-require('persistence').setup()
-
-vim.keymap.set("n", "<leader>l", function()
-  require('persistence').start()
-  require('persistence').load()
-end, { desc = "[L]oad session", })
-
-vim.keymap.set("n", "-", "<cmd>Neotree filesystem reveal position=current<cr>")
-require('neo-tree').setup({
-  filesystem = {
-    window = {
-      mappings = {
-        ['-'] = 'close_window'
-      }
-    }
-  }
-})
 
 vim.keymap.set('n', '<leader><leader>',
   function()
@@ -383,8 +331,47 @@ vim.keymap.set('n', '<leader>qv',
     vim.diagnostic.open_float()
   end,
   { desc = '[V]iew current line diagnostic' })
+-- INFO: better statusline
+require("lualine").setup({
+  options = {
+    section_separators = { left = "", right = "", },
+    component_separators = { left = "", right = "", },
+  },
+})
 
-vim.lsp.enable { 'zeek' }
+-- INFO: keybinding helper
+
+require("which-key").setup({
+  spec = {
+    { "<leader>s", group = "[S]earch", icon = { icon = "", color = "green", }, },
+  }
+})
+
+-- NOTE: there are many more quality-of-life plugins available and others that
+-- achieve what these do. these are just our recommendations to start.
+
+-- INFO: utility plugins
+require("todo-comments").setup()
+
+-- INFO: session handling
+require('persistence').setup()
+
+vim.keymap.set("n", "<leader>l", function()
+  require('persistence').start()
+  require('persistence').load()
+end, { desc = "[L]oad session", })
+
+-- INFO: file manager
+vim.keymap.set("n", "-", "<cmd>Neotree filesystem reveal position=current<cr>")
+require('neo-tree').setup({
+  filesystem = {
+    window = {
+      mappings = {
+        ['-'] = 'close_window'
+      }
+    }
+  }
+})
 
 -- uncomment to enable automatic plugin updates
 -- vim.pack.update()
