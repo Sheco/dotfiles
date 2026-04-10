@@ -306,7 +306,7 @@ vim.keymap.set('n', '<leader><leader>',
 )
 
 vim.keymap.set('n', 'grl',
-  ':Telescope diagnostics<CR>',
+  '<cmd>Telescope diagnostics<CR>',
   { desc = '[L]ist diagnostics messages' })
 
 -- INFO: better statusline
