@@ -374,7 +374,6 @@ vim.keymap.set("n", "<leader>t", function()
   vim.cmd("term")
   vim.cmd("startinsert")
 end, { desc = "[T]erminal"})
-vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]])
 
 -- uncomment to enable automatic plugin updates
 -- vim.pack.update()
