@@ -229,7 +229,7 @@ require("blink.cmp").setup({
     },
   },
 
-   keymap = { preset = 'default' },
+  keymap = { preset = 'default' },
 
   fuzzy = {
     implementation = "lua",
