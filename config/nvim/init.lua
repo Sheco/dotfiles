@@ -265,6 +265,7 @@ local lsp_servers = {
   },
   bashls = {},
   ts_ls = {},
+  pyright = {},
 }
 vim.lsp.enable { 'zeek' }
 
