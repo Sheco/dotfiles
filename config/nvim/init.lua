@@ -310,12 +310,7 @@ vim.keymap.set('n', 'grl',
   { desc = '[L]ist diagnostics messages' })
 
 -- INFO: better statusline
-require("lualine").setup({
-  options = {
-    section_separators = { left = "", right = "", },
-    component_separators = { left = "", right = "", },
-  },
-})
+require("lualine").setup({})
 
 -- INFO: keybinding helper
 
