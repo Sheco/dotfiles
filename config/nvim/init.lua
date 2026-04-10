@@ -356,7 +356,7 @@ vim.keymap.set("n", "<leader>l", function()
   require('persistence').start()
   require('persistence').load()
 end, { desc = "[L]oad session", })
-;
+
 -- INFO: file manager
 vim.keymap.set("n", "-", "<cmd>Neotree filesystem reveal position=current<cr>")
 require('neo-tree').setup({
@@ -369,7 +369,7 @@ require('neo-tree').setup({
   }
 })
 
--- terminal
+-- INFO: terminal
 vim.keymap.set("n", "<leader>t", function()
   vim.cmd("term")
   vim.cmd("startinsert")
