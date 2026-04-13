@@ -111,6 +111,9 @@ vim.opt.inccommand = "split"
 -- show which line your cursor is on
 vim.opt.cursorline = true
 
+-- Minimal number of screen lines to keep above and below the cursor.
+vim.o.scrolloff = 10
+
 -- set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 
