@@ -179,6 +179,7 @@ vim.pack.add({
   "https://github.com/nvim-telescope/telescope.nvim", -- the fuzzy finder
   "https://github.com/nvim-treesitter/nvim-treesitter",
   "https://github.com/saghen/blink.cmp",
+  "https://github.com/saghen/blink.lib",
   "https://github.com/neovim/nvim-lspconfig", -- default configs for lsps
   "https://github.com/mason-org/mason.nvim",                     -- package manager
   "https://github.com/mason-org/mason-lspconfig.nvim",           -- lspconfig bridge
