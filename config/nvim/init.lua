@@ -191,6 +191,8 @@ vim.pack.add({
   'https://github.com/nvim-neo-tree/neo-tree.nvim',
   'https://github.com/MunifTanjim/nui.nvim',
   'https://github.com/lewis6991/gitsigns.nvim',
+  'https://github.com/NeogitOrg/neogit',
+  'https://github.com/sindrets/diffview.nvim',
   'https://github.com/zeek/vim-zeek'
 } )
 
@@ -349,6 +351,15 @@ require('neo-tree').setup({
     }
   }
 })
+
+vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", {desc="Neogit"})
+vim.keymap.set("n", "<leader>gs", require("gitsigns").stage_hunk)
+vim.keymap.set("v", "<leader>gs", function()
+  require("gitsigns").stage_hunk({
+    vim.fn.line("."),
+    vim.fn.line("v"),
+  })
+end)
 
 -- INFO: terminal
 vim.keymap.set("n", "<leader>t", function()
