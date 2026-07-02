@@ -420,6 +420,16 @@ require('gitsigns').setup{
   end
 }
 
+vim.keymap.set("n", "<leader>q", function()
+  for _, win in ipairs(vim.fn.getwininfo()) do
+    if win.quickfix == 1 then
+      vim.cmd("cclose")
+      return
+    end
+  end
+  vim.cmd("copen")
+end)
+
 -- INFO: terminal
 vim.keymap.set("n", "<leader>t", function()
   vim.cmd("term")
