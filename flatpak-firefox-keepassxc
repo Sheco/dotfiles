@@ -28,4 +28,4 @@ cp ./target/release/keepassxc-proxy "$FLATPAK_FIREFOX_CONFIG/native-messaging-ho
 
 # allow the Firefox sandbox to access KeePassXC's browser socket
 # with `sudo` it's a system-wide change, without one can add the `--user` option instead to make it a user-specific override
-sudo flatpak override --filesystem=xdg-run/app/org.keepassxc.KeePassXC/:create org.mozilla.firefox
+flatpak override --user --filesystem=xdg-run/app/org.keepassxc.KeePassXC/:create org.mozilla.firefox
