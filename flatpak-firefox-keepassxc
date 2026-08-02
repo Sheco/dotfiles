@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Copied from
+# https://github.com/keepassxreboot/keepassxc/issues/7352#issuecomment-2409096972
+# It requires rust installed and a cc compile (zig cc can be used in the steam deck)
+
+# create native-messaging-hosts
+FLATPAK_FIREFOX_CONFIG="$(realpath ~/.var/app/org.mozilla.firefox/.mozilla)"
+mkdir "$FLATPAK_FIREFOX_CONFIG/native-messaging-hosts"
+cat > "$FLATPAK_FIREFOX_CONFIG/native-messaging-hosts/org.keepassxc.keepassxc_browser.json" <<EOF
+{
+    "allowed_extensions": [
+        "keepassxc-browser@keepassxc.org"
+    ],
+    "description": "KeePassXC integration with native messaging support",
+    "name": "org.keepassxc.keepassxc_browser",
+    "path": "$FLATPAK_FIREFOX_CONFIG/native-messaging-hosts/keepassxc-proxy",
+    "type": "stdio"
+}
+EOF
+
+# build varjolintu's keepassxc-proxy-rust and copy it to native-messaging-hosts
+# you might need to install Cargo first, but can remove it after building the project again
+git clone https://github.com/varjolintu/keepassxc-proxy-rust.git
+cd keepassxc-proxy-rust
+cargo build --release
+cp ./target/release/keepassxc-proxy "$FLATPAK_FIREFOX_CONFIG/native-messaging-hosts/keepassxc-proxy"
+
+# allow the Firefox sandbox to access KeePassXC's browser socket
+# with `sudo` it's a system-wide change, without one can add the `--user` option instead to make it a user-specific override
+sudo flatpak override --filesystem=xdg-run/app/org.keepassxc.KeePassXC/:create org.mozilla.firefox
