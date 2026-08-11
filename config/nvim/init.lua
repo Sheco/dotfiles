@@ -193,6 +193,11 @@ vim.pack.add({
   'https://github.com/lewis6991/gitsigns.nvim',
   'https://github.com/NeogitOrg/neogit',
   'https://github.com/sindrets/diffview.nvim',
+  'https://github.com/mfussenegger/nvim-dap',
+  'https://github.com/rcarriga/nvim-dap-ui',
+  'https://github.com/nvim-neotest/nvim-nio',
+  'https://github.com/jay-babu/mason-nvim-dap.nvim',
+  'https://github.com/theHamsta/nvim-dap-virtual-text',
   'https://github.com/zeek/vim-zeek'
 } )
 
@@ -262,6 +267,7 @@ require("mason-lspconfig").setup()
 require("mason-tool-installer").setup({
   ensure_installed = vim.tbl_keys(lsp_servers),
 })
+require("dapui").setup()
 
 -- configure each lsp server on the table
 -- to check what clients are attached to the current buffer, use
@@ -444,5 +450,121 @@ vim.keymap.set("n", "<leader>t", function()
   vim.cmd("startinsert")
 end, { desc = "[T]erminal"})
 
+
+-- Debugging
+
+local dap = require("dap")
+vim.keymap.set("n", "<F9>", function()
+  dap.toggle_breakpoint()
+end, { desc = "[T]oggle breakpoint" })
+
+vim.keymap.set("n", "<F5>", function()
+  require('dapui').open()
+  dap.continue()
+end, {  desc="[C]ontinue" })
+
+vim.keymap.set("n", "<F17>", function() -- Shift-F5
+  require('dapui').close()
+  dap.continue()
+end, {  desc="Stop" })
+
+vim.keymap.set("n", "<F11>", function()
+  dap.step_into()
+end, {  desc="Step [I]nto" })
+
+vim.keymap.set("n", "<F10>", function()
+  dap.step_over()
+end, {  desc="Step [O]ver" })
+
+vim.keymap.set("n", "<F23>", function() -- Shift-F11
+  dap.step_out()
+end, {  desc="Step o[U]t" })
+
+local pkg = require("mason-registry").get_package("local-lua-debugger-vscode")
+local lua_debug_path = pkg:get_install_path().."/extension"
+
+dap.adapters["lua-local"] = {
+  type = "executable",
+  command = "node",
+  args = { lua_debug_path.."/extension/debugAdapter.js" },
+  enrich_config = function(config, on_config)
+    if not config.extensionPath then
+      local c = vim.deepcopy(config)
+      c.extensionPath = lua_debug_path
+      on_config(c)
+    else
+      on_config(config)
+    end
+  end,
+}
+
+local function love_root()
+  local dir = vim.fn.expand("%:p:h")
+  local main = vim.fs.find({ "main.lua" }, { upward = true, path = dir })[1]
+  return main and vim.fs.dirname(main) or nil
+end
+
+dap.configurations.lua = {
+  {
+    name = "Debug current file",
+    type = "lua-local",
+    request = "launch",
+    cwd = "${workspaceFolder}",
+    program = function()
+      return { lua = "lua", file = vim.fn.expand("%:p") }
+    end,
+    args = function()
+      return {}
+    end,
+  },
+  {
+    name = "Debug LOVE",
+    type = "lua-local",
+    request = "launch",
+    cwd = "${workspaceFolder}",
+    program = function()
+      return { command = "love" }
+    end,
+    args = function()
+      local root = love_root()
+      return { root }
+    end,
+  },
+}
+
+local pkg = require("mason-registry").get_package("js-debug-adapter")
+dap.adapters["pwa-node"] = {
+  type = "server",
+  host = "localhost",
+  port = "${port}",
+  executable = {
+    command = "node",
+    args = {
+      pkg:get_install_path() .."/js-debug/src/dapDebugServer.js",
+      "${port}",
+    },
+  },
+}
+
+local js_based_languages = { "typescript", "javascript", "typescriptreact" }
+
+for _, language in ipairs(js_based_languages) do
+  dap.configurations[language] = {
+    {
+      type = "pwa-node",
+      request = "launch",
+      name = "Launch file",
+      program = "${file}",
+      cwd = "${workspaceFolder}",
+    },
+    {
+      type = "pwa-node",
+      request = "attach",
+      name = "Attach",
+      processId = require 'dap.utils'.pick_process,
+      cwd = "${workspaceFolder}",
+    },
+  }
+end
 -- uncomment to enable automatic plugin updates
 -- vim.pack.update()
