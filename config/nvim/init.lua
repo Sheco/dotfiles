@@ -456,15 +456,49 @@ end, { desc = "[T]erminal"})
 
 
 -- Debugging
-
 local dap = require("dap")
-vim.keymap.set("n", "<F9>", function()
-  dap.toggle_breakpoint()
-end, { desc = "[T]oggle breakpoint" })
+local function wanted_config(ft)
+  -- 1. in-file marker: `dap_default: <name>` in the first 30 lines
+  for _, line in ipairs(vim.api.nvim_buf_get_lines(0, 0, 30, false)) do
+    local name = line:match('dap_default:%s*(.-)%s*$')
+    if name and name ~= '' then return name end
+  end
+  -- 2. project default from .dap_default
+  local root = vim.fs.root(0, { '.dap_default', '.git' })
+  if root then
+    local f = io.open(root .. '/.dap_default', 'r')
+    if f then
+      local name = vim.trim(f:read('*l') or '')
+      f:close()
+      if name ~= '' then return name end
+    end
+  end
+end
+
+local function debug_current()
+  -- Session already running → just resume (continue/step past breakpoint)
+  if dap.session() then
+    dap.continue()
+    return
+  end
+
+  local ft = vim.bo.filetype
+  local wanted = wanted_config(ft)
+  if wanted then
+    for _, cfg in ipairs(dap.configurations[ft] or {}) do
+      if cfg.name == wanted then
+        dap.run(cfg)
+        return
+      end
+    end
+    vim.notify(('No dap config named %q for %s'):format(wanted, ft), vim.log.levels.WARN)
+  end
+  dap.continue()  -- no marker, no project default, or no match → picker
+end
 
 vim.keymap.set("n", "<F5>", function()
   require('dapui').open()
-  dap.continue()
+  debug_current()
 end, {  desc="[C]ontinue" })
 
 vim.keymap.set("n", "<F17>", function() -- Shift-F5
@@ -472,22 +506,26 @@ vim.keymap.set("n", "<F17>", function() -- Shift-F5
   dap.close()
 end, {  desc="Stop" })
 
-vim.keymap.set("n", "<F11>", function()
-  dap.step_into()
-end, {  desc="Step [I]nto" })
+vim.keymap.set("n", "<F9>", function()
+  dap.toggle_breakpoint()
+end, { desc = "[T]oggle breakpoint" })
 
 vim.keymap.set("n", "<F10>", function()
   dap.step_over()
 end, {  desc="Step [O]ver" })
 
+vim.keymap.set("n", "<F11>", function()
+  dap.step_into()
+end, {  desc="Step [I]nto" })
+
 vim.keymap.set("n", "<F23>", function() -- Shift-F11
   dap.step_out()
 end, {  desc="Step o[U]t" })
 
-local pkg = require("mason-registry").get_package("local-lua-debugger-vscode")
-local lua_debug_path = pkg:get_install_path().."/extension"
+local lua_pkg = require("mason-registry").get_package("local-lua-debugger-vscode")
+local lua_debug_path = lua_pkg:get_install_path().."/extension"
 
-dap.adapters["lua-local"] = {
+dap.adapters.lua = {
   type = "executable",
   command = "node",
   args = { lua_debug_path.."/extension/debugAdapter.js" },
@@ -504,8 +542,8 @@ dap.adapters["lua-local"] = {
 
 dap.configurations.lua = {
   {
-    name = "Debug current file",
-    type = "lua-local",
+    name = "Launch file",
+    type = "lua",
     request = "launch",
     cwd = "${workspaceFolder}",
     program = function()
@@ -516,8 +554,8 @@ dap.configurations.lua = {
     end,
   },
   {
-    name = "Debug LOVE",
-    type = "lua-local",
+    name = "Launch LOVE",
+    type = "lua",
     request = "launch",
     cwd = "${workspaceFolder}",
     program = function()
@@ -533,7 +571,7 @@ dap.configurations.lua = {
   },
 }
 
-local pkg = require("mason-registry").get_package("js-debug-adapter")
+local js_pkg = require("mason-registry").get_package("js-debug-adapter")
 dap.adapters["pwa-node"] = {
   type = "server",
   host = "localhost",
@@ -541,7 +579,7 @@ dap.adapters["pwa-node"] = {
   executable = {
     command = "node",
     args = {
-      pkg:get_install_path() .."/js-debug/src/dapDebugServer.js",
+      js_pkg:get_install_path() .."/js-debug/src/dapDebugServer.js",
       "${port}",
     },
   },
@@ -567,5 +605,75 @@ for _, language in ipairs(js_based_languages) do
     },
   }
 end
+
+
+local python_pkg = require("mason-registry").get_package("debugpy")
+
+dap.adapters.python = function(cb, config)
+  if config.request == "attach" then
+    local port = (config.connect or config).port
+    cb({
+      type = "server",
+      host = (config.connect or config).host or "127.0.0.1",
+      port = assert(port, "`connect.port` is required for a python attach configuration"),
+      options = { source_filetype = "python" },
+    })
+  else
+    cb({
+      type = "executable",
+      command = python_pkg:get_install_path() .. "/venv/bin/python",
+      args = { "-m", "debugpy.adapter" },
+      options = { source_filetype = "python" },
+    })
+  end
+end
+
+local function python_path()
+  local venv = os.getenv("VIRTUAL_ENV")
+  if venv then return venv .. "/bin/python" end
+  local cwd = vim.fn.getcwd()
+  for _, p in ipairs({ "/.venv/bin/python", "/venv/bin/python" }) do
+    if vim.fn.executable(cwd .. p) == 1 then return cwd .. p end
+  end
+  return "python3"
+end
+dap.configurations.python = {
+  {
+    type = "python",
+    request = "launch",
+    name = "Launch file",
+    program = "${file}",
+    pythonPath = python_path,
+    cwd = "${workspaceFolder}",
+  },
+  {
+    type = "python",
+    request = "launch",
+    name = "Launch file + args",
+    program = "${file}",
+    args = function()
+      return vim.split(vim.fn.input("Arguments: "), " +")
+    end,
+    pythonPath = python_path,
+    cwd = "${workspaceFolder}",
+  },
+  {
+    type = "python",
+    request = "launch",
+    name = "Launch module",
+    module = function() return vim.fn.input("Module: ") end,
+    pythonPath = python_path,
+    cwd = "${workspaceFolder}",
+  },
+  {
+    type = "python",
+    request = "attach",
+    name = "Attach (remote debugpy)",
+    connect = function()
+      return { host = "127.0.0.1", port = tonumber(vim.fn.input("Port [5678]: ")) or 5678 }
+    end,
+  },
+}
+
 -- uncomment to enable automatic plugin updates
 -- vim.pack.update()
