@@ -193,6 +193,7 @@ vim.pack.add({
   'https://github.com/lewis6991/gitsigns.nvim',
   'https://github.com/NeogitOrg/neogit',
   'https://github.com/sindrets/diffview.nvim',
+  'https://github.com/folke/lazydev.nvim',
   'https://github.com/mfussenegger/nvim-dap',
   'https://github.com/rcarriga/nvim-dap-ui',
   'https://github.com/nvim-neotest/nvim-nio',
@@ -200,6 +201,8 @@ vim.pack.add({
   'https://github.com/theHamsta/nvim-dap-virtual-text',
   'https://github.com/zeek/vim-zeek'
 } )
+
+require('lazydev').setup()
 
 -- INFO: colorscheme
 vim.cmd.colorscheme("tokyonight-night")
@@ -267,6 +270,7 @@ require("mason-lspconfig").setup()
 require("mason-tool-installer").setup({
   ensure_installed = vim.tbl_keys(lsp_servers),
 })
+require("mason-nvim-dap").setup()
 require("dapui").setup()
 
 -- configure each lsp server on the table
