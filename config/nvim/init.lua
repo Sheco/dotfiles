@@ -502,12 +502,6 @@ dap.adapters["lua-local"] = {
   end,
 }
 
-local function love_root()
-  local dir = vim.fn.expand("%:p:h")
-  local main = vim.fs.find({ "main.lua" }, { upward = true, path = dir })[1]
-  return main and vim.fs.dirname(main) or nil
-end
-
 dap.configurations.lua = {
   {
     name = "Debug current file",
@@ -530,7 +524,10 @@ dap.configurations.lua = {
       return { command = "love" }
     end,
     args = function()
-      local root = love_root()
+      local dir = vim.fn.expand("%:p:h")
+      local main = vim.fs.find({ "main.lua" }, { upward = true, path = dir })[1]
+      local root = main and vim.fs.dirname(main) or nil
+
       return { root }
     end,
   },
