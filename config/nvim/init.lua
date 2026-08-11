@@ -469,7 +469,7 @@ end, {  desc="[C]ontinue" })
 
 vim.keymap.set("n", "<F17>", function() -- Shift-F5
   require('dapui').close()
-  dap.continue()
+  dap.close()
 end, {  desc="Stop" })
 
 vim.keymap.set("n", "<F11>", function()
