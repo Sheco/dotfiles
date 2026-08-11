@@ -1,4 +1,5 @@
 [tools]
+"conda:make" = "latest"
 fastfetch = "latest"
 go = "latest"
 lazygit = "latest"
