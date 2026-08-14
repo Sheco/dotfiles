@@ -199,39 +199,54 @@ vim.pack.add({
   'https://github.com/nvim-neotest/nvim-nio',
   'https://github.com/jay-babu/mason-nvim-dap.nvim',
   'https://github.com/theHamsta/nvim-dap-virtual-text',
+  'https://github.com/akinsho/bufferline.nvim',
   'https://github.com/zeek/vim-zeek'
 } )
 
-require('lazydev').setup()
-
 -- INFO: colorscheme
-vim.cmd.colorscheme("tokyonight-night")
+vim.cmd.colorscheme("tokyonight")
+
+require('lazydev').setup()
+local bufferline = require('bufferline')
+bufferline.setup({
+  options = {
+    style_preset = bufferline.style_preset.default,
+    separator_style = "slope",
+    diagnostics="nvim_lsp",
+    indicator = {
+      style="underline",
+    },
+    sort_by = function(buffer_a, buffer_b)
+        -- add custom logic
+        local modified_a = vim.fn.getftime(buffer_a.path)
+        local modified_b = vim.fn.getftime(buffer_b.path)
+        return modified_a > modified_b
+    end,
+  }
+})
+vim.keymap.set("n", "<C-l>", "<cmd>bnext<cr>",     { desc = "Next buffer" })
+vim.keymap.set("n", "<C-h>", "<cmd>bprevious<cr>", { desc = "Previous buffer" })
+vim.keymap.set("t", "<C-l>", "<cmd>bnext<cr>",     { desc = "Next buffer" })
+vim.keymap.set("t", "<C-h>", "<cmd>bprevious<cr>", { desc = "Previous buffer" })
+vim.keymap.set("n", "<S-l>", "<cmd>BufferLineMoveNext<cr>", { desc = "Move buffer right" })
+vim.keymap.set("n", "<S-h>", "<cmd>BufferLineMovePrev<cr>", { desc = "Move buffer left" })
 
 -- INFO: formatting and syntax highlighting
 
 -- equivalent to :TSUpdate
-require("nvim-treesitter.install").update()
-
 require("nvim-treesitter").setup({
-  sync_install = true,
-
-  modules = {},
-  ignore_install = {},
-
-  ensure_installed = {
-    "lua",
-    "bash",
-    "typescript",
-    "c",
-    "rust",
-    "go",
-  },
-
-  auto_install = true, -- autoinstall languages that are not installed yet
-
   highlight = {
     enable = true,
   },
+})
+require('nvim-treesitter').install({ 'lua', 'python', 'typescript', 'javascript' })
+
+vim.api.nvim_create_autocmd("PackChanged", {
+  callback = function(ev)
+    if ev.data.spec.name == "nvim-treesitter" and ev.data.kind == "update" then
+      vim.cmd("TSUpdate")
+    end
+  end,
 })
 
 -- INFO: completion engine
