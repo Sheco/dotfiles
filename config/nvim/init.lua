@@ -141,7 +141,7 @@ vim.diagnostic.config({
       [vim.diagnostic.severity.HINT] = " ",
     },
   },
-  virtual_text = false, -- disable inline spam
+  virtual_text = true, -- disable inline spam
   underline = true,
 })
 
@@ -287,6 +287,7 @@ require("mason-tool-installer").setup({
 })
 require("mason-nvim-dap").setup()
 require("dapui").setup()
+require("nvim-dap-virtual-text").setup({})
 
 -- configure each lsp server on the table
 -- to check what clients are attached to the current buffer, use
