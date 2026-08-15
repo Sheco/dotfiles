@@ -195,7 +195,7 @@ vim.pack.add({
   'https://github.com/sindrets/diffview.nvim',
   'https://github.com/folke/lazydev.nvim',
   'https://github.com/mfussenegger/nvim-dap',
-  'https://github.com/rcarriga/nvim-dap-ui',
+  'https://github.com/igorlfs/nvim-dap-view',
   'https://github.com/nvim-neotest/nvim-nio',
   'https://github.com/jay-babu/mason-nvim-dap.nvim',
   'https://github.com/theHamsta/nvim-dap-virtual-text',
@@ -286,7 +286,11 @@ require("mason-tool-installer").setup({
   ensure_installed = vim.tbl_keys(lsp_servers),
 })
 require("mason-nvim-dap").setup()
-require("dapui").setup()
+require('dap-view').setup({
+  winbar = {
+    default_section="scopes"
+  }
+})
 require("nvim-dap-virtual-text").setup({})
 
 -- configure each lsp server on the table
@@ -513,12 +517,12 @@ local function debug_current()
 end
 
 vim.keymap.set("n", "<F5>", function()
-  require('dapui').open()
+  require('dap-view').open()
   debug_current()
 end, {  desc="[C]ontinue" })
 
 vim.keymap.set("n", "<F17>", function() -- Shift-F5
-  require('dapui').close()
+  require('dap-view').close()
   dap.close()
 end, {  desc="Stop" })
 
