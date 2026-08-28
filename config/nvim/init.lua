@@ -224,10 +224,10 @@ bufferline.setup({
     end,
   }
 })
-vim.keymap.set("n", "<C-l>", "<cmd>bnext<cr>",     { desc = "Next buffer" })
-vim.keymap.set("n", "<C-h>", "<cmd>bprevious<cr>", { desc = "Previous buffer" })
-vim.keymap.set("t", "<C-l>", "<cmd>bnext<cr>",     { desc = "Next buffer" })
-vim.keymap.set("t", "<C-h>", "<cmd>bprevious<cr>", { desc = "Previous buffer" })
+vim.keymap.set("n", "<C-l>", "<cmd>BufferLineCycleNext<cr>",     { desc = "Next buffer" })
+vim.keymap.set("n", "<C-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Previous buffer" })
+vim.keymap.set("t", "<C-l>", "<cmd>BufferLineCycleNext<cr>",     { desc = "Next buffer" })
+vim.keymap.set("t", "<C-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Previous buffer" })
 vim.keymap.set("n", "<S-l>", "<cmd>BufferLineMoveNext<cr>", { desc = "Move buffer right" })
 vim.keymap.set("n", "<S-h>", "<cmd>BufferLineMovePrev<cr>", { desc = "Move buffer left" })
 
