@@ -65,8 +65,12 @@ vim.keymap.set("n", "<F23>", function() -- Shift-F11
   dap.step_out()
 end, {  desc="Step o[U]t" })
 
-local lua_pkg = require("mason-registry").get_package("local-lua-debugger-vscode")
-local lua_debug_path = lua_pkg:get_install_path().."/extension"
+
+function get_install_path(package) 
+  return vim.fn.expand("$MASON/packages/")..package
+end
+
+local lua_debug_path = get_install_path("local-lua-debugger-vscode").."/extension"
 
 dap.adapters.lua = {
   type = "executable",
@@ -114,7 +118,6 @@ dap.configurations.lua = {
   },
 }
 
-local js_pkg = require("mason-registry").get_package("js-debug-adapter")
 dap.adapters["pwa-node"] = {
   type = "server",
   host = "localhost",
@@ -122,7 +125,7 @@ dap.adapters["pwa-node"] = {
   executable = {
     command = "node",
     args = {
-      js_pkg:get_install_path() .."/js-debug/src/dapDebugServer.js",
+      get_install_path("js-debug-adapter") .."/js-debug/src/dapDebugServer.js",
       "${port}",
     },
   },
@@ -149,9 +152,6 @@ for _, language in ipairs(js_based_languages) do
   }
 end
 
-
-local python_pkg = require("mason-registry").get_package("debugpy")
-
 dap.adapters.python = function(cb, config)
   if config.request == "attach" then
     local port = (config.connect or config).port
@@ -164,7 +164,7 @@ dap.adapters.python = function(cb, config)
   else
     cb({
       type = "executable",
-      command = python_pkg:get_install_path() .. "/venv/bin/python",
+      command = get_install_path("debugpy") .. "/venv/bin/python",
       args = { "-m", "debugpy.adapter" },
       options = { source_filetype = "python" },
     })

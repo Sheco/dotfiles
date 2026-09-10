@@ -25,7 +25,9 @@ local lsp_servers = {
   },
   bashls = {},
   ts_ls = {},
-  pyright = {},
+  debugpy = {},
+  ["local-lua-debugger-vscode"] = {},
+  ["js-debug-adapter"] = {}
 }
 vim.lsp.enable { 'zeek' }
 
