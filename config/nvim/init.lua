@@ -35,9 +35,9 @@ vim.pack.add({
 
 require 'config.options'
 require 'config.bufferline'
+require 'config.lsp'
 require 'config.debug'
 require 'config.treesitter'
-require 'config.lsp'
 require 'config.telescope'
 require 'config.git'
 
