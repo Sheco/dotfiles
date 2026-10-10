@@ -1,6 +1,15 @@
 -- INFO: fuzzy finder
 
-require("telescope").setup({})
+require("telescope").setup({
+  pickers = {
+    buffers = {
+      mappings = {
+        i = { ["<C-d>"] = require("telescope.actions").delete_buffer },
+        n = { ["d"] = require("telescope.actions").delete_buffer },
+      },
+    },
+  },
+})
 
 local pickers = require("telescope.builtin")
 
