@@ -1,5 +1,6 @@
 #!/bin/sh
 # Restart KDE Connect whenever the system resumes from sleep
+#NOTE: run bin/setup_kdeconnect-resume-refresh
 gdbus monitor --system \
   --dest org.freedesktop.login1 \
   --object-path /org/freedesktop/login1 |

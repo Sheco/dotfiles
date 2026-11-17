@@ -1,0 +1,6 @@
+#!/bin/bash
+mkdir -p ~/.config/systemd/user
+ln -s ~/Document/dotfiles/config/systemd/user/kdeconnect-resume-refresh.service to ~/.config/systemd/user
+systemctl --user daemon-reload
+systemctl --user enable --now kdeconnect-resume-refresh.service
+
